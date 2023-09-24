@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5326555051465174910}
   - component: {fileID: 7096376457326161312}
   - component: {fileID: 4570518254635907503}
+  - component: {fileID: 2653456408876012921}
   - component: {fileID: 3956009513865795872}
   m_Layer: 0
   m_Name: SlingshotHook
@@ -84,6 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2653456408876012921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698325937209117132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74450b6e38f4423dbfb6ba353f112ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depth: 300
+  spring: 1000
+  damper: 1
+  ctrlInput: 0
+  minDistance: 0
+  maxDistance: 0.5
+  SlingshotHook: {fileID: 0}
+  namePattern: (Pebble|Worm).*
+  boxSize: {x: 1, y: 20, z: 20}
+  unHookBoundary: {x: 0, y: 0, z: 0}
 --- !u!136 &3956009513865795872
 CapsuleCollider:
   m_ObjectHideFlags: 0
