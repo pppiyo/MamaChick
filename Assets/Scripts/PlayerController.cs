@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         // }
     }
 
-    // Update is called once per frame
+    // todo: when grab worm and pebble, make them use gravity. // currently, they are kinematic and don't use gravity.
     void Update()
     {
         // Move back and forth
@@ -46,12 +46,6 @@ public class PlayerController : MonoBehaviour
                 transform.position.y,
                 forwardRange
             );
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Launch a projectile from the player
-            Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }
 }

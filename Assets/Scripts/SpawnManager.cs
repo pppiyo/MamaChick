@@ -1,47 +1,68 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private int MAX_APPLES = 10;
-    public GameObject[] applePrefabs;
+    public GameObject[] allPrefabs; // 0: eagle, 1: fruit, 2: pebble, 3: worm
 
-    private float spawnLimitZLeft = -10;
-    private float spawnLimitZRight = -300;
-    private float spawnPosY = 60;
-
-    private float startDelay = 0.1f;
-    private float spawnIntervalDefault = 1.0f;
-
-    // private float spawnIntervalLo = 1.0f;
-    // private float spawnIntervalHi = 2.0f;
+    private float EAGLE_LIMIT_UP = 100;
+    private float EAGLE_LIMIT_DOWN = 65;
+    private float EAGLE_LIMIT_LEFT = 300; // horizontal: z: + <- -
+    private float EAGLE_LIMIT_RIGHT = 100; // horizontal: z: + <- -
+    private float PEBBLE_LIMIT_LEFT = 200; // horizontal: z: + <- -
+    private float PEBBLE_LIMIT_RIGHT = 5; // horizontal: z: + <- -
+    private float PEBBLE_Y = 1; // horizontal: z: + <- -
+    private float WORM_LIMIT_LEFT = 300; // horizontal: z: + <- -
+    private float WORM_LIMIT_RIGHT = 5; // horizontal: z: + <- -
+    private float WORM_Y = 1; // horizontal: z: + <- -
+    private float FRUIT_LIMIT_LEFT = -10; // horizontal: z: + <- -
+    private float FRUIT_LIMIT_RIGHT = -300; // horizontal: z: + <- -
+    private float FRUIT_LIMIT_UP = 90; // horizontal: z: + <- -
+    private float FRUIT_LIMIT_DOWN = 60; // horizontal: z: + <- -
 
     // Start is called before the first frame update
-    void Start()
+    void Start() { }
+
+    // Update is called once per frame
+    void Update()
     {
-        // InvokeRepeating("SpawnRandomApple", startDelay, spawnIntervalDefault);
-        // InvokeRepeating("SpawnRandomApple", startDelay, Random.Range(spawnIntervalLo, spawnIntervalHi));
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            float x = 0;
+            float y = 0;
+            float z = 0;
+            // 0: eagle, 1: fruit, 2: pebble, 3: worm
+            int prefabIndex = Random.Range(0, allPrefabs.Length);
+
+            if (prefabIndex == 0) // eagle
+            {
+                y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
+                z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
+            }
+            if (prefabIndex == 1) // fruit
+            {
+                y = Random.Range(FRUIT_LIMIT_DOWN, FRUIT_LIMIT_UP);
+                z = Random.Range(FRUIT_LIMIT_LEFT, FRUIT_LIMIT_RIGHT);
+            }
+            if (prefabIndex == 2) // pebble
+            {
+                y = PEBBLE_Y;
+                z = Random.Range(PEBBLE_LIMIT_LEFT, PEBBLE_LIMIT_RIGHT);
+            }
+            if (prefabIndex == 3) // worm
+            {
+                y = WORM_Y;
+                z = Random.Range(WORM_LIMIT_LEFT, WORM_LIMIT_RIGHT);
+            }
+
+            Vector3 spawnPos = new Vector3(x, y, z);
+
+            Instantiate(
+                allPrefabs[prefabIndex],
+                spawnPos,
+                allPrefabs[prefabIndex].transform.rotation
+            );
+        }
     }
-
-    // Spawn random ball at random x position at top of play area
-    // void SpawnRandomApple()
-    // {
-    //     applePrefabs = new GameObject[MAX_APPLES];
-    //     // Generate random ball index and random spawn position
-    //     Vector3 spawnPos = new Vector3(
-    //         0,
-    //         spawnPosY,
-    //         Random.Range(spawnLimitZLeft, spawnLimitZRight)
-    //     );
-
-    //     int appleIndex = Random.Range(0, applePrefabs.Length);
-
-    //     // instantiate ball at random spawn location
-    //     Instantiate(
-    //         applePrefabs[appleIndex],
-    //         spawnPos,
-    //         applePrefabs[appleIndex].transform.rotation
-    //     );
-    // }
 }
