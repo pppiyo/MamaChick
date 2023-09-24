@@ -3,19 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Chick
+  - Eagle
+  - Pebble
+  - Worm
+  - Fruit
+  - GrassFloor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fruit
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Eagle
+  - Pebble
+  - Chick
+  - Worm
+  - GrassFloor
   - 
   - 
   - 

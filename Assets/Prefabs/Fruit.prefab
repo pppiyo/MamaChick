@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 7273903988808299267}
   - component: {fileID: 7273903988808299276}
   - component: {fileID: 7273903988808299277}
-  - component: {fileID: 7885835018601563031}
-  - component: {fileID: -4996740737335553324}
-  m_Layer: 0
-  m_Name: SolidPebble
-  m_TagString: Untagged
+  - component: {fileID: 278239512116183394}
+  - component: {fileID: 1162611905372657249}
+  - component: {fileID: 2473249086952168089}
+  m_Layer: 3
+  m_Name: Fruit
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,9 +31,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7273903988808299278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.62, y: 10.61, z: 0.55}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 70, z: -30}
+  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,7 +56,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a0926a621b1b4460da3b696a56ef85d9, type: 2}
+  - {fileID: 2100000, guid: 19d63a8b45ee044dc95069539c6786aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,8 +95,8 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7273903988808299278}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 13400000, guid: 3f6cfc65ea9f2498088a448a0c491454, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -108,28 +109,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7273903988808299278}
   serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0
+  m_Mass: 2
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &7885835018601563031
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7273903988808299278}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4996740737335553324
+--- !u!114 &278239512116183394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,14 +126,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 7273903988808299278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5ad7b0089476f4da845af2495505fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 947e5dfcc78664f15933ff2861b68641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxSize: {x: 10, y: 10, z: 10}
-  SlingshotHook: {fileID: 0}
-  namePattern: SolidPebble*
-  spring: 1000
-  damper: 10
-  minDistance: 0
-  maxDistance: 0.5
-  ctrlInput: 0
+  applePrefabs: []
+--- !u!114 &1162611905372657249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273903988808299278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e8164fec2334e0d9c911231357043e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2473249086952168089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273903988808299278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da497fabb3964455dab20f38a9e48b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
