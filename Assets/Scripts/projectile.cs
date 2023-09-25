@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public bool ctrlInput;
     public float minDistance;
     public float maxDistance;
+    public float releaseDelay;
     public GameObject SlingshotHook;
     public string namePattern;
     public Vector3 boxSize;
@@ -35,9 +36,18 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    IEnumerator UnHookProjectile(GameObject indPebble)
+    {
+        yield return new WaitForSeconds(releaseDelay);
+        Debug.Log("Unhooking the projectile");
+        DestroyImmediate(indPebble.GetComponent<SpringJoint>());
+
+    }
+
     void OnMouseDown()
     {
         isPressed = true;
+        Debug.Log("mouse down");
         foreach (GameObject indPebble in allPebbles)
         {
             if (indPebble.GetComponent<SpringJoint>() != null)
@@ -56,6 +66,7 @@ public class Projectile : MonoBehaviour
             if (indPebble.GetComponent<SpringJoint>() != null)
             {
                 indPebble.GetComponent<Rigidbody>().isKinematic = false;
+                StartCoroutine(UnHookProjectile(indPebble));
                 break;
             }
         }
@@ -92,8 +103,8 @@ public class Projectile : MonoBehaviour
                         && !Input.GetMouseButtonDown(0)
                     )
                     {
-                        Debug.Log("Unhooking the projectile");
-                        DestroyImmediate(collider.gameObject.GetComponent<SpringJoint>());
+                        // Debug.Log("Unhooking the projectile");
+                        // DestroyImmediate(collider.gameObject.GetComponent<SpringJoint>());
                         break;
                     }
                 }
@@ -122,7 +133,7 @@ public class Projectile : MonoBehaviour
                         collider.gameObject.transform.position = new Vector3(
                             SlingshotHook.transform.position.x,
                             SlingshotHook.transform.position.y - 8,
-                            SlingshotHook.transform.position.z + 8
+                            SlingshotHook.transform.position.z
                         );
                         collider.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
                         collider.gameObject.GetComponent<SpringJoint>().spring = spring;
@@ -135,11 +146,12 @@ public class Projectile : MonoBehaviour
         }
         if (isPressed)
         {
-            mousePosition = new Vector3(depth, Input.mousePosition.y, Input.mousePosition.z);
+            // mousePosition = new Vector3(-1*Input.mousePosition.x, Input.mousePosition.y, 0);
             foreach (GameObject indPebbles in allPebbles)
             {
                 if (indPebbles.GetComponent<SpringJoint>() != null)
                 {
+                   mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
                     indPebbles.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
                 }
             }
