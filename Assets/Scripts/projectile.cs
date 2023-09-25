@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float depth;
     public float spring;
     public float damper;
@@ -18,21 +17,21 @@ public class Projectile : MonoBehaviour
     public Vector3 unHookBoundary;
     private bool isPressed = false;
     private Vector3 mousePosition;
-    public List<GameObject> allPebbles = new List<GameObject>();
+    private List<GameObject> allPebbles = new List<GameObject>();
 
     void Start()
     {
-        // SlingshotHook = GameObject.Find("SlingshotHook");
-        // Regex PebbleNames = new Regex(namePattern);
-        // GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
-        // foreach (GameObject indObject in allGameObjects)
-        // {
-        //     if (PebbleNames.IsMatch(indObject.name))
-        //     {
-        //         Debug.Log(indObject.name);
-        //         allPebbles.Add(indObject);
-        //     }
-        // }
+        SlingshotHook = GameObject.Find("SlingshotHook");
+        Regex PebbleNames = new Regex(namePattern);
+        GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject indObject in allGameObjects)
+        {
+            if (PebbleNames.IsMatch(indObject.name))
+            {
+                Debug.Log(indObject.name);
+                allPebbles.Add(indObject);
+            }
+        }
     }
 
     void OnMouseDown()
@@ -61,10 +60,19 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Regex PebbleNames = new Regex(namePattern);
+        allPebbles.Clear();
+        GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject indObject in allGameObjects)
+        {
+            if (PebbleNames.IsMatch(indObject.name))
+            {
+                Debug.Log(indObject.name);
+                allPebbles.Add(indObject);
+            }
+        }
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize);
         Collider[] projectiles = Physics.OverlapBox(transform.position, unHookBoundary);
 
@@ -113,8 +121,8 @@ public class Projectile : MonoBehaviour
                         collider.gameObject.AddComponent<SpringJoint>();
                         collider.gameObject.transform.position = new Vector3(
                             SlingshotHook.transform.position.x,
-                            SlingshotHook.transform.position.y - 3,
-                            SlingshotHook.transform.position.z
+                            SlingshotHook.transform.position.y - 8,
+                            SlingshotHook.transform.position.z + 8
                         );
                         collider.gameObject.GetComponent<SpringJoint>().connectedBody =
                             SlingshotHook.GetComponent<Rigidbody>();
@@ -128,7 +136,7 @@ public class Projectile : MonoBehaviour
         }
         if (isPressed)
         {
-            mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
+            mousePosition = new Vector3(depth, Input.mousePosition.y, Input.mousePosition.z);
             foreach (GameObject indPebbles in allPebbles)
             {
                 if (indPebbles.GetComponent<SpringJoint>() != null)
