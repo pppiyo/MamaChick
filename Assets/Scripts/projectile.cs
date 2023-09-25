@@ -21,14 +21,15 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        SlingshotHook = GameObject.Find("SlingshotHook");
+        Debug.Log("Projectile Script Set!");
+        //SlingshotHook = GameObject.Find("SlingshotHook");
+        Debug.Log(SlingshotHook.name);
         Regex PebbleNames = new Regex(namePattern);
         GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject indObject in allGameObjects)
         {
             if (PebbleNames.IsMatch(indObject.name))
             {
-                Debug.Log(indObject.name);
                 allPebbles.Add(indObject);
             }
         }
@@ -69,7 +70,6 @@ public class Projectile : MonoBehaviour
         {
             if (PebbleNames.IsMatch(indObject.name))
             {
-                Debug.Log(indObject.name);
                 allPebbles.Add(indObject);
             }
         }
@@ -124,8 +124,7 @@ public class Projectile : MonoBehaviour
                             SlingshotHook.transform.position.y - 8,
                             SlingshotHook.transform.position.z + 8
                         );
-                        collider.gameObject.GetComponent<SpringJoint>().connectedBody =
-                            SlingshotHook.GetComponent<Rigidbody>();
+                        collider.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
                         collider.gameObject.GetComponent<SpringJoint>().spring = spring;
                         collider.gameObject.GetComponent<SpringJoint>().damper = damper;
                         collider.gameObject.GetComponent<SpringJoint>().minDistance = minDistance;
