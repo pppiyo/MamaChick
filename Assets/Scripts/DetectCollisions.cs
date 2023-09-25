@@ -19,7 +19,6 @@ public class DetectCollisions : MonoBehaviour
                     Destroy(other.gameObject); // Destroy pebble
                     Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                     rb.isKinematic = false;
-                    Debug.Log(rb.isKinematic);
                     rb.detectCollisions = true;
 
                     Vector3 setVelocity = new Vector3(
@@ -29,9 +28,6 @@ public class DetectCollisions : MonoBehaviour
                     // (-other.gameObject.GetComponent<MoveForward>().speed / velocityRatio) // get pebble speed for testing purposes (since peeble shouldn't use MoveForward script!)
                     );
                     rb.velocity = setVelocity;
-
-                    Debug.Log(rb.velocity);
-                    // Debug.Log("Pebble collided with fruit!!");
                 }
                 // if pebble collides with eagle, destroy both
                 else if (gameObject.CompareTag("Eagle"))

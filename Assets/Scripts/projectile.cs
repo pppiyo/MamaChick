@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
         {
             if (PebbleNames.IsMatch(indObject.name))
             {
-                Debug.Log(indObject.name);
+                // Debug.Log(indObject.name);
                 allPebbles.Add(indObject);
             }
         }
@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour
         {
             if (PebbleNames.IsMatch(indObject.name))
             {
-                Debug.Log(indObject.name);
+                // Debug.Log(indObject.name);
                 allPebbles.Add(indObject);
             }
         }
@@ -92,7 +92,7 @@ public class Projectile : MonoBehaviour
                         && !Input.GetMouseButtonDown(0)
                     )
                     {
-                        Debug.Log("Unhooking the projectile");
+                        // Debug.Log("Unhooking the projectile");
                         DestroyImmediate(collider.gameObject.GetComponent<SpringJoint>());
                         break;
                     }
@@ -117,7 +117,7 @@ public class Projectile : MonoBehaviour
                     }
                     if (!anyConnected)
                     {
-                        Debug.Log("Hooking new Projectile");
+                        // Debug.Log("Hooking new Projectile");
                         collider.gameObject.AddComponent<SpringJoint>();
                         collider.gameObject.transform.position = new Vector3(
                             SlingshotHook.transform.position.x,
