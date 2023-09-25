@@ -6,25 +6,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Projectile projectile;
     public float horizontalInput;
     public float speed = 40.0f;
     public float backRange = 300.0f;
     public float forwardRange = 15.0f;
 
-    void Start()
-    {
-        // Regex pebbleNames = new Regex(projectile.namePattern);
-        // GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
-        // foreach (GameObject indObject in allGameObjects)
-        // {
-        //     if (pebbleNames.IsMatch(indObject.name))
-        //     {
-        //         Debug.Log(indObject.name);
-        //         projectile.allPebbles.Add(indObject);
-        //     }
-        // }
-    }
+    void Start() { }
 
     // todo: when grab worm and pebble, make them use gravity. // currently, they are kinematic and don't use gravity.
     void Update()
