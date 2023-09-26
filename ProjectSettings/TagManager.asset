@@ -12,6 +12,20 @@ TagManager:
   - GrassFloor
   - trajectoryPebble
   - trajectoryWorm
+  - Fruit11
+  - Fruit5
+  - Fruit2
+  - Fruit3
+  - Fruit7
+  - Fruit12
+  - Fruit6
+  - Fruit13
+  - Fruit9
+  - Fruit4
+  - Fruit10
+  - Fruit8
+  - Fruit1
+  - Fence
   layers:
   - Default
   - TransparentFX

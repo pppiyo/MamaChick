@@ -6,7 +6,7 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     private float leftLimit = 300; // horizontal: z: + <- -
     private float rightLimit = -300; // horizontal: z: + <- -
-    private float groundLimit = -0.1f; // horizontal: y
+    private float groundLimit = -1.0f; // horizontal: y
 
     // Update is called once per frame
     void Update()
