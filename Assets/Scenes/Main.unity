@@ -2298,6 +2298,10 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: interval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: boxSize.x
       value: 20
       objectReference: {fileID: 0}
@@ -2321,6 +2325,14 @@ PrefabInstance:
       propertyPath: SlingshotHook
       value: 
       objectReference: {fileID: 1365814363}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: trajectoryLayer1
+      value: trajectoryPebble
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: trajectoryLayer2
+      value: trajectoryWorm
+      objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: unHookBoundary.x
       value: 1

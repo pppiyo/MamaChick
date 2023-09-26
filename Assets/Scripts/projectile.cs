@@ -13,8 +13,10 @@ public class Projectile : MonoBehaviour
     public float maxDistance;
     public float releaseDelay;
     public GameObject SlingshotHook;
-    public string trajectoryLayer;
-    private int trajectoryLayerIndex;
+    public string trajectoryLayer1;
+    private int trajectoryLayerIndex1;
+    public string trajectoryLayer2;
+    private int trajectoryLayerIndex2;
     public GameObject projectilePrefab1;
     public GameObject projectilePrefab2;
     public string namePattern;
@@ -28,7 +30,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         Debug.Log("Projectile Script Set!");
-        trajectoryLayerIndex = LayerMask.NameToLayer(trajectoryLayer);
+        trajectoryLayerIndex1 = LayerMask.NameToLayer(trajectoryLayer1);
+        trajectoryLayerIndex2 = LayerMask.NameToLayer(trajectoryLayer2);
         Regex PebbleNames = new Regex(namePattern);
         GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject indObject in allGameObjects)
@@ -157,16 +160,21 @@ public class Projectile : MonoBehaviour
                         Quaternion spawnRotation = Quaternion.identity;
                         // Instantiate the prefab.
                         GameObject predictionProjectile;
-                        if(indPebbles.tag == "pebble")
+                        if (indPebbles.tag == "Pebble")
+                        {
                             predictionProjectile = Instantiate(projectilePrefab1, spawnPosition, spawnRotation);
+                            //predictionProjectile.gameObject.layer = trajectoryLayerIndex1;
+                        }
                         else
+                        {
                             predictionProjectile = Instantiate(projectilePrefab2, spawnPosition, spawnRotation);
+                          //  predictionProjectile.gameObject.layer = trajectoryLayerIndex2;
+                        }
                         predictionProjectile.name = "newProjectile";
                         predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                         predictionProjectile.gameObject.AddComponent<SpringJoint>();
                         predictionProjectile.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
                         predictionProjectile.gameObject.GetComponent<SpringJoint>().autoConfigureConnectedAnchor = false;
-                        predictionProjectile.gameObject.layer = trajectoryLayerIndex; 
                         predictionProjectile.gameObject.GetComponent<SpringJoint>().anchor = transform.InverseTransformPoint(SlingshotHook.transform.position);
                         predictionProjectile.gameObject.GetComponent<SpringJoint>().spring = spring;
                         predictionProjectile.gameObject.GetComponent<SpringJoint>().damper = damper;
