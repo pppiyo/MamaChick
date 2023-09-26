@@ -78,7 +78,7 @@ public class SpawnManager : MonoBehaviour
     //     GameObject prefab = Resources.Load<GameObject>(prefabName);
     //     Debug.Log(prefab == null ? "Prefab is null" : "Prefab is not null");
     //     // Instantiate the prefab at the specified position
-    //     Instantiate(prefab, transform.position, Quaternion.identity);
+    //     Instantiate(prefab, new Vector3(), Quaternion.identity);
     // }
 
     // Update is called once per frame
@@ -87,79 +87,79 @@ public class SpawnManager : MonoBehaviour
         fruit1 = GameObject.FindGameObjectsWithTag("Fruit1");
         if (fruit1.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_1_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_1_INDEX], new Vector3(0, 50, -70), Quaternion.identity);
         }
 
         fruit2 = GameObject.FindGameObjectsWithTag("Fruit2");
         if (fruit2.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_2_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_2_INDEX], new Vector3(0, 70, -90), Quaternion.identity);
         }
 
         fruit3 = GameObject.FindGameObjectsWithTag("Fruit3");
         if (fruit3.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_3_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_3_INDEX], new Vector3(0, 70, -120), Quaternion.identity);
         }
 
         fruit4 = GameObject.FindGameObjectsWithTag("Fruit4");
         if (fruit4.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_4_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_4_INDEX], new Vector3(0, 70, -150), Quaternion.identity);
         }
 
         fruit5 = GameObject.FindGameObjectsWithTag("Fruit5");
         if (fruit5.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_5_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_5_INDEX], new Vector3(0, 55, -160), Quaternion.identity);
         }
 
         fruit6 = GameObject.FindGameObjectsWithTag("Fruit6");
         if (fruit6.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_6_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_6_INDEX], new Vector3(0, 80, -45), Quaternion.identity);
         }
 
         fruit7 = GameObject.FindGameObjectsWithTag("Fruit7");
         if (fruit7.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_7_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_7_INDEX], new Vector3(0, 55, -15), Quaternion.identity);
         }
 
         fruit8 = GameObject.FindGameObjectsWithTag("Fruit8");
         if (fruit8.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_8_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_8_INDEX], new Vector3(0, 55, -100), Quaternion.identity);
         }
 
         fruit9 = GameObject.FindGameObjectsWithTag("Fruit9");
         if (fruit9.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_9_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_9_INDEX], new Vector3(0, 55, -135), Quaternion.identity);
         }
 
         fruit10 = GameObject.FindGameObjectsWithTag("Fruit10");
         if (fruit10.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_10_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_10_INDEX], new Vector3(0, 70, -30), Quaternion.identity);
         }
 
         fruit11 = GameObject.FindGameObjectsWithTag("Fruit11");
         if (fruit11.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_11_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_11_INDEX], new Vector3(0, 70, -60), Quaternion.identity);
         }
 
         fruit12 = GameObject.FindGameObjectsWithTag("Fruit12");
         if (fruit12.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_12_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_12_INDEX], new Vector3(0, 55, -50), Quaternion.identity);
         }
 
         fruit13 = GameObject.FindGameObjectsWithTag("Fruit13");
         if (fruit13.Length <= 1)
         {
-            Instantiate(allPrefabs[FRUIT_13_INDEX], transform.position, Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_13_INDEX], new Vector3(0, 80, -80), Quaternion.identity);
         }
 
         // Check number of eagles. If there are more than its max, don't spawn more.
