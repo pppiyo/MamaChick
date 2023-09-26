@@ -127,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5976846, z: 1.130234}
-  m_Center: {x: 0, y: 0.2267921, z: -0.0029478057}
+  m_Size: {x: 1, y: 2.2383175, z: 1.6195897}
+  m_Center: {x: 0, y: -0.11060655, z: 0.020989085}
 --- !u!1 &4497358479363124466
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 379899030430783723}
   - component: {fileID: -153439193336879604}
   - component: {fileID: -218433498141068176}
+  - component: {fileID: 5437197472550939431}
   m_Layer: 6
   m_Name: Eagle
   m_TagString: Eagle
@@ -230,5 +231,17 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 13, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5437197472550939431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497358479363124466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eb4cba6bd7f495b970194b6a64b9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     // private int FRUIT_MAX_COUNT = 13;
     private int WORM_MAX_COUNT = 15;
     private int PEBBLE_MAX_COUNT = 15;
+    private int CHICK_MAX_COUNT = 3;
 
     private float EAGLE_LIMIT_UP = 100;
     private float EAGLE_LIMIT_DOWN = 65;
@@ -24,12 +25,14 @@ public class SpawnManager : MonoBehaviour
     private float WORM_LIMIT_LEFT = 300; // horizontal: z: + <- -
     private float WORM_LIMIT_RIGHT = 5; // horizontal: z: + <- -
     private float WORM_Y = 1; // horizontal: z: + <- -
+    private float CHICK_Y = 3; // horizontal: z: + <- -
 
     private GameObject[] eagles;
     private GameObject[] worms;
 
     // private GameObject[] fruits;
     private GameObject[] pebbles;
+    private GameObject[] chicks;
 
     private int EAGLE_INDEX = 0;
     private int PEBBLE_INDEX = 1;
@@ -47,6 +50,7 @@ public class SpawnManager : MonoBehaviour
     private int FRUIT_11_INDEX = 13;
     private int FRUIT_12_INDEX = 14;
     private int FRUIT_13_INDEX = 15;
+    private int CHICK_INDEX = 16;
 
     private GameObject[] fruit1;
     private GameObject[] fruit2;
@@ -62,6 +66,10 @@ public class SpawnManager : MonoBehaviour
     private GameObject[] fruit12;
     private GameObject[] fruit13;
 
+    private List<int> chickLocations = new List<int> { -190, -250, -310 };
+
+    public float cooldown = 5.0f;
+
     // public string namePattern;
 
     // private float FRUIT_LIMIT_LEFT = -10; // horizontal: z: + <- -
@@ -72,16 +80,6 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() { }
 
-    // void SpawnPrefab(string prefabName)
-    // {
-    //     // Load the prefab by its name from the "Resources" folder
-    //     GameObject prefab = Resources.Load<GameObject>(prefabName);
-    //     Debug.Log(prefab == null ? "Prefab is null" : "Prefab is not null");
-    //     // Instantiate the prefab at the specified position
-    //     Instantiate(prefab, new Vector3(), Quaternion.identity);
-    // }
-
-    // Update is called once per frame
     void Update()
     {
         fruit1 = GameObject.FindGameObjectsWithTag("Fruit1");
@@ -164,28 +162,59 @@ public class SpawnManager : MonoBehaviour
 
         // Check number of eagles. If there are more than its max, don't spawn more.
         eagles = GameObject.FindGameObjectsWithTag("Eagle");
-        if (eagles.Length <= EAGLE_MAX_COUNT)
+        if (eagles.Length <= EAGLE_MAX_COUNT && cooldown <= 0)
         {
             SpawnRandomEagle();
+            cooldown = 5.0f;
             // Debug.Log("Number of eagles: " + eagles.Length);
+        }
+        else
+        {
+            cooldown -= Time.deltaTime;
         }
 
         // Check number of worms. If there are more than its max, don't spawn more.
         worms = GameObject.FindGameObjectsWithTag("Worm");
-        if (worms.Length <= WORM_MAX_COUNT)
+        if (worms.Length <= WORM_MAX_COUNT && cooldown <= 0)
         {
             SpawnRandomWorm();
+            cooldown = 5.0f;
             // Debug.Log("Number of worms: " + worms.Length);
+        }
+        else
+        {
+            cooldown -= Time.deltaTime;
         }
 
         // Check number of pebbles. If there are more than its max, don't spawn more.
         pebbles = GameObject.FindGameObjectsWithTag("Pebble");
-        if (pebbles.Length <= PEBBLE_MAX_COUNT)
+        if (pebbles.Length <= PEBBLE_MAX_COUNT && cooldown <= 0)
         {
             SpawnRandomPebble();
+            cooldown = 5.0f;
             // Debug.Log("Number of pebbles: " + pebbles.Length);
         }
+        else
+        {
+            cooldown -= Time.deltaTime;
+        }
+
+        // Check number of chicks. If there are more than its max, don't spawn more.
+        chicks = GameObject.FindGameObjectsWithTag("Chick");
+        if (chicks.Length <= CHICK_MAX_COUNT)
+        {
+            float y = CHICK_Y;
+            float z = Random.Range(-450, -100);
+            Vector3 spawnPos = new Vector3(0, y, z);
+            Instantiate(
+                allPrefabs[CHICK_INDEX],
+                spawnPos,
+                allPrefabs[CHICK_INDEX].transform.rotation
+            );
+        }
     }
+
+    // void SpawnChick() {if  }
 
     void SpawnRandomWorm()
     {
