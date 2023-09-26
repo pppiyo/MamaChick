@@ -10,6 +10,19 @@ TagManager:
   - Worm
   - Fruit
   - GrassFloor
+  - Fruit1
+  - Fruit2
+  - Fruit3
+  - Fruit4
+  - Fruit5
+  - Fruit6
+  - Fruit7
+  - Fruit8
+  - Fruit9
+  - Fruit10
+  - Fruit11
+  - Fruit12
+  - Fruit13
   layers:
   - Default
   - TransparentFX

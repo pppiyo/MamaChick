@@ -15,7 +15,9 @@ public class ShowObjectName : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Text UI element not assigned to ShowObjectName script on " + gameObject.name);
+            // Debug.LogWarning(
+            // "Text UI element not assigned to ShowObjectName script on " + gameObject.name
+            // );
         }
     }
 }

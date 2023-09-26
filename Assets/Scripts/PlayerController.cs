@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
-using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
