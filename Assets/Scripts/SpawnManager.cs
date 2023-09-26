@@ -43,11 +43,11 @@ public class SpawnManager : MonoBehaviour
             y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
             z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
         }
-        if (prefabIndex == 1) // fruit
-        {
-            y = Random.Range(FRUIT_LIMIT_DOWN, FRUIT_LIMIT_UP);
-            z = Random.Range(FRUIT_LIMIT_LEFT, FRUIT_LIMIT_RIGHT);
-        }
+        //if (prefabIndex == 1) // fruit
+        //{
+        //    y = Random.Range(FRUIT_LIMIT_DOWN, FRUIT_LIMIT_UP);
+        //    z = Random.Range(FRUIT_LIMIT_LEFT, FRUIT_LIMIT_RIGHT);
+        //}
         if (prefabIndex == 2) // pebble
         {
             y = PEBBLE_Y;

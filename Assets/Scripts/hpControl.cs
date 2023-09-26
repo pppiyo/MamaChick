@@ -70,6 +70,7 @@ public class hpControl : MonoBehaviour
                 MP.AddPoint(numericValue);
                 // totoal point + 1
                 p.AddScore(1);
+                Debug.Log("achieved 21");
                 if (p.points == 3)
                 {
                     // win this game
@@ -77,6 +78,7 @@ public class hpControl : MonoBehaviour
                 }
             } else if (MP.mp + numericValue < 21)
             {
+                Debug.Log("not achieved 21");
                 MP.AddPoint(numericValue);
             } else
             {
