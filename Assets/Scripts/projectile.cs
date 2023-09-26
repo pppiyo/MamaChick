@@ -13,10 +13,13 @@ public class Projectile : MonoBehaviour
     public float maxDistance;
     public float releaseDelay;
     public GameObject SlingshotHook;
+    public GameObject projectilePrefab1;
+    public GameObject projectilePrefab2;
     public string namePattern;
     public Vector3 boxSize;
-    public Vector3 unHookBoundary;
     private bool isPressed = false;
+    private float timer = 0f;
+    public float interval = 2f;
     private Vector3 mousePosition;
     private List<GameObject> allPebbles = new List<GameObject>();
 
@@ -43,11 +46,18 @@ public class Projectile : MonoBehaviour
         DestroyImmediate(indPebble.GetComponent<SpringJoint>());
 
     }
+    IEnumerator UnHookTrajectory(GameObject indPebble)
+    {
+        indPebble.GetComponent<Rigidbody>().isKinematic = false;
+        yield return new WaitForSeconds(releaseDelay);
+        Debug.Log("Unhooking the projectile");
+        DestroyImmediate(indPebble.GetComponent<SpringJoint>());
+    }
 
     void OnMouseDown()
     {
         isPressed = true;
-        Debug.Log("mouse down");
+        Debug.Log("Mouse down");
         foreach (GameObject indPebble in allPebbles)
         {
             if (indPebble.GetComponent<SpringJoint>() != null)
@@ -85,33 +95,15 @@ public class Projectile : MonoBehaviour
             }
         }
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize);
-        Collider[] projectiles = Physics.OverlapBox(transform.position, unHookBoundary);
 
         ctrlInput =
             Input.GetButtonDown("Fire1")
             || Input.GetMouseButtonDown(0)
             || Input.GetMouseButtonUp(0);
 
-        // Break the Hook if its nearby the slingshot hook
-        if (!isPressed)
-            foreach (Collider collider in projectiles)
-            {
-                if (PebbleNames.IsMatch(collider.gameObject.name))
-                {
-                    if (
-                        collider.gameObject.GetComponent<SpringJoint>() != null
-                        && !Input.GetMouseButtonDown(0)
-                    )
-                    {
-                        // Debug.Log("Unhooking the projectile");
-                        // DestroyImmediate(collider.gameObject.GetComponent<SpringJoint>());
-                        break;
-                    }
-                }
-            }
-
         foreach (Collider collider in colliders)
         {
+            timer += Time.deltaTime;
             // Selects only pebbles within the collider
             if (PebbleNames.IsMatch(collider.gameObject.name))
             {
@@ -136,6 +128,8 @@ public class Projectile : MonoBehaviour
                             SlingshotHook.transform.position.z
                         );
                         collider.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
+                        collider.gameObject.GetComponent<SpringJoint>().autoConfigureConnectedAnchor = false;
+                        collider.gameObject.GetComponent<SpringJoint>().anchor = transform.InverseTransformPoint(SlingshotHook.transform.position);
                         collider.gameObject.GetComponent<SpringJoint>().spring = spring;
                         collider.gameObject.GetComponent<SpringJoint>().damper = damper;
                         collider.gameObject.GetComponent<SpringJoint>().minDistance = minDistance;
@@ -152,7 +146,29 @@ public class Projectile : MonoBehaviour
                 if (indPebbles.GetComponent<SpringJoint>() != null)
                 {
                    mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
-                    indPebbles.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+                   indPebbles.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+
+                    // Trajectory prediction with dummy Projectiles
+                    if (timer >= interval)
+                    {
+                        timer = 0f;
+                        Vector3 spawnPosition = indPebbles.transform.position;
+                        Quaternion spawnRotation = Quaternion.identity;
+                        // Instantiate the prefab.
+                        GameObject predictionProjectile = Instantiate(projectilePrefab1, spawnPosition, spawnRotation);
+                        predictionProjectile.name = "newProjectile";
+                        predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                        predictionProjectile.gameObject.AddComponent<SpringJoint>();
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().autoConfigureConnectedAnchor = false;
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().anchor = transform.InverseTransformPoint(SlingshotHook.transform.position);
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().spring = spring;
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().damper = damper;
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().minDistance = minDistance;
+                        predictionProjectile.gameObject.GetComponent<SpringJoint>().maxDistance = maxDistance;
+                        predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                        StartCoroutine(UnHookTrajectory(predictionProjectile));
+                    }
                 }
             }
         }
