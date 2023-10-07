@@ -68,149 +68,167 @@ public class SpawnManager : MonoBehaviour
 
     private List<int> chickLocations = new List<int> { -190, -250, -310 };
 
-    public float cooldown = 5.0f;
-
-    // public string namePattern;
-
-    // private float FRUIT_LIMIT_LEFT = -10; // horizontal: z: + <- -
-    // private float FRUIT_LIMIT_RIGHT = -300; // horizontal: z: + <- -
-    // private float FRUIT_LIMIT_UP = 90; // horizontal: z: + <- -
-    // private float FRUIT_LIMIT_DOWN = 60; // horizontal: z: + <- -
+    public float cooldown = 60f;
+    public float pebbleCoolDown = 10f;
+    public float wormCoolDown = 20f;
+    public float eagleCoolDown = 5f;
+    public int startSetup = 0;
 
     // Start is called before the first frame update
     void Start() { }
 
     void Update()
     {
+        int spawned = 0;
         fruit1 = GameObject.FindGameObjectsWithTag("Fruit1");
-        if (fruit1.Length <= 1)
+        if (fruit1.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_1_INDEX], new Vector3(0, 50, -70), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit2 = GameObject.FindGameObjectsWithTag("Fruit2");
-        if (fruit2.Length <= 1)
+        if (fruit2.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_2_INDEX], new Vector3(0, 70, -90), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit3 = GameObject.FindGameObjectsWithTag("Fruit3");
-        if (fruit3.Length <= 1)
+        if (fruit3.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_3_INDEX], new Vector3(0, 70, -120), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit4 = GameObject.FindGameObjectsWithTag("Fruit4");
-        if (fruit4.Length <= 1)
+        if (fruit4.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_4_INDEX], new Vector3(0, 70, -150), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit5 = GameObject.FindGameObjectsWithTag("Fruit5");
-        if (fruit5.Length <= 1)
+        if (fruit5.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_5_INDEX], new Vector3(0, 55, -160), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit6 = GameObject.FindGameObjectsWithTag("Fruit6");
-        if (fruit6.Length <= 1)
+        if (fruit6.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_6_INDEX], new Vector3(0, 80, -45), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit7 = GameObject.FindGameObjectsWithTag("Fruit7");
-        if (fruit7.Length <= 1)
+        if (fruit7.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_7_INDEX], new Vector3(0, 55, -15), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit8 = GameObject.FindGameObjectsWithTag("Fruit8");
-        if (fruit8.Length <= 1)
+        if (fruit8.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_8_INDEX], new Vector3(0, 55, -100), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit9 = GameObject.FindGameObjectsWithTag("Fruit9");
-        if (fruit9.Length <= 1)
+        if (fruit9.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_9_INDEX], new Vector3(0, 55, -135), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit10 = GameObject.FindGameObjectsWithTag("Fruit10");
-        if (fruit10.Length <= 1)
+        if (fruit10.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_10_INDEX], new Vector3(0, 70, -30), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit11 = GameObject.FindGameObjectsWithTag("Fruit11");
-        if (fruit11.Length <= 1)
+        if (fruit11.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_11_INDEX], new Vector3(0, 70, -60), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit12 = GameObject.FindGameObjectsWithTag("Fruit12");
-        if (fruit12.Length <= 1)
+        if (fruit12.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_12_INDEX], new Vector3(0, 55, -50), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
         }
 
         fruit13 = GameObject.FindGameObjectsWithTag("Fruit13");
-        if (fruit13.Length <= 1)
+        if (fruit13.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_13_INDEX], new Vector3(0, 80, -80), Quaternion.identity);
+            cooldown = 20f;
+            spawned = 1;
+        }
+        if (spawned == 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
+        if (startSetup == 0)
+        {
+            startSetup = 1;
         }
 
         // Check number of eagles. If there are more than its max, don't spawn more.
         eagles = GameObject.FindGameObjectsWithTag("Eagle");
-        if (eagles.Length <= EAGLE_MAX_COUNT && cooldown <= 0)
+        if (eagles.Length <= EAGLE_MAX_COUNT && eagleCoolDown <= 0)
         {
             SpawnRandomEagle();
-            cooldown = 5.0f;
+            eagleCoolDown = 5.0f;
             // Debug.Log("Number of eagles: " + eagles.Length);
         }
         else
         {
-            cooldown -= Time.deltaTime;
+            eagleCoolDown -= Time.deltaTime;
         }
 
         // Check number of worms. If there are more than its max, don't spawn more.
         worms = GameObject.FindGameObjectsWithTag("Worm");
-        if (worms.Length <= WORM_MAX_COUNT && cooldown <= 0)
+        if (worms.Length <= WORM_MAX_COUNT && wormCoolDown <= 0)
         {
             SpawnRandomWorm();
-            cooldown = 5.0f;
+            wormCoolDown = 20.0f;
             // Debug.Log("Number of worms: " + worms.Length);
         }
         else
         {
-            cooldown -= Time.deltaTime;
+            wormCoolDown -= Time.deltaTime;
         }
 
         // Check number of pebbles. If there are more than its max, don't spawn more.
         pebbles = GameObject.FindGameObjectsWithTag("Pebble");
-        if (pebbles.Length <= PEBBLE_MAX_COUNT && cooldown <= 0)
+        if (pebbles.Length <= PEBBLE_MAX_COUNT && pebbleCoolDown <= 0)
         {
             SpawnRandomPebble();
-            cooldown = 5.0f;
+            pebbleCoolDown = 10.0f;
             // Debug.Log("Number of pebbles: " + pebbles.Length);
         }
         else
         {
-            cooldown -= Time.deltaTime;
-        }
-
-        // Check number of chicks. If there are more than its max, don't spawn more.
-        chicks = GameObject.FindGameObjectsWithTag("Chick");
-        if (chicks.Length <= CHICK_MAX_COUNT)
-        {
-            float y = CHICK_Y;
-            float z = Random.Range(-450, -100);
-            Vector3 spawnPos = new Vector3(0, y, z);
-            Instantiate(
-                allPrefabs[CHICK_INDEX],
-                spawnPos,
-                allPrefabs[CHICK_INDEX].transform.rotation
-            );
+            pebbleCoolDown -= Time.deltaTime;
         }
     }
 
@@ -222,6 +240,26 @@ public class SpawnManager : MonoBehaviour
         float z = Random.Range(WORM_LIMIT_LEFT, WORM_LIMIT_RIGHT);
         Vector3 spawnPos = new Vector3(0, y, z);
         Instantiate(allPrefabs[WORM_INDEX], spawnPos, allPrefabs[WORM_INDEX].transform.rotation);
+    }
+
+    void SpawnRandomEagle()
+    {
+        float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
+        float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
+        Vector3 spawnPos = new Vector3(0, y, z);
+        Instantiate(allPrefabs[EAGLE_INDEX], spawnPos, allPrefabs[EAGLE_INDEX].transform.rotation);
+    }
+
+    void SpawnRandomPebble()
+    {
+        float y = PEBBLE_Y;
+        float z = Random.Range(PEBBLE_LIMIT_LEFT, PEBBLE_LIMIT_RIGHT);
+        Vector3 spawnPos = new Vector3(0, y, z);
+        Instantiate(
+            allPrefabs[PEBBLE_INDEX],
+            spawnPos,
+            allPrefabs[PEBBLE_INDEX].transform.rotation
+        );
     }
 
     void SpawnRandomEagle()

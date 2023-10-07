@@ -10,19 +10,22 @@ TagManager:
   - Worm
   - Fruit
   - GrassFloor
-  - Fruit1
+  - trajectoryPebble
+  - trajectoryWorm
+  - Fruit11
+  - Fruit5
   - Fruit2
   - Fruit3
-  - Fruit4
-  - Fruit5
-  - Fruit6
   - Fruit7
-  - Fruit8
-  - Fruit9
-  - Fruit10
-  - Fruit11
   - Fruit12
+  - Fruit6
   - Fruit13
+  - Fruit9
+  - Fruit4
+  - Fruit10
+  - Fruit8
+  - Fruit1
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -35,9 +38,9 @@ TagManager:
   - Chick
   - Worm
   - GrassFloor
-  - 
-  - 
-  - 
+  - TrajectoryPebble
+  - MamaChick
+  - TrajectoryWorm
   - 
   - 
   - 

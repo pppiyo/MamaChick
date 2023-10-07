@@ -11,6 +11,39 @@ public class DetectCollisions : MonoBehaviour
         // if collider is pebble
         if (other.gameObject != null)
         {
+            if (other.gameObject.CompareTag("Fence"))
+            {
+                Debug.Log("Fence Check");
+                Debug.Log(gameObject.tag);
+                if (
+                    gameObject.CompareTag("trajectoryWorm")
+                    || gameObject.CompareTag("trajectoryPebble")
+                    || gameObject.CompareTag("Pebble")
+                    || gameObject.CompareTag("Worm")
+                )
+                {
+                    Destroy(gameObject);
+                }
+            }
+
+            if (gameObject.CompareTag("Eagle"))
+            {
+                if (other.gameObject.CompareTag("trajectoryPebble"))
+                {
+                    Destroy(other.gameObject);
+                }
+                else if (other.gameObject.CompareTag("Pebble"))
+                {
+                    Destroy(gameObject);
+                    Destroy(other.gameObject);
+                }
+                else if (other.gameObject.CompareTag("Chick"))
+                {
+                    Destroy(gameObject);
+                    Destroy(other.gameObject);
+                }
+            }
+
             if (other.gameObject.CompareTag("Pebble"))
             {
                 // if pebble collides with fruit, destroy pebble
@@ -35,27 +68,10 @@ public class DetectCollisions : MonoBehaviour
                     rb.isKinematic = false;
                     rb.detectCollisions = true;
 
-                    Vector3 setVelocity = new Vector3(
-                        0,
-                        0,
-                        -20 // to be replaced with actual pebble speed reduced by half
-                    // (-other.gameObject.GetComponent<MoveForward>().speed / velocityRatio) // get pebble speed for testing purposes (since peeble shouldn't use MoveForward script!)
-                    );
+                    Vector3 setVelocity = other.gameObject.GetComponent<Rigidbody>().velocity;
                     rb.velocity = setVelocity;
+                    gameObject.GetComponent<SphereCollider>().isTrigger = false;
                 }
-                // if pebble collides with eagle, destroy both
-                // else if (gameObject.CompareTag("Eagle"))
-                // {
-                //     // Debug.Log("Pebble collided with eagle");
-                //     Destroy(gameObject);
-                //     Destroy(other.gameObject);
-                // }
-            }
-
-            if (other.gameObject.CompareTag("Eagle"))
-            {
-                Destroy(gameObject);
-                Destroy(other.gameObject);
             }
         }
     }
