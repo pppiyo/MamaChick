@@ -2,37 +2,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
-/*
- *
- 1. This is the chick that you're gonna feed
- 2. Chick's hp will decrease as time goes by
- 3. When hp drops to 0, the chick disappears and no points will be gained through this chick
- 4. You can pick up any worm on the ground to feed the chick
- 5. You will gain 1 point by feeding a chick with exactly 21 magic points of apples
- 6. Your goal is to gain as many points as possible in 5 minutes
- 7. There will be randomly spawned eagles catching chicken, you can throw pebble to hit them down
- 
- 1. Press '<-' and '->' (or 'A' and 'D') to control the movement of Mama
- 2. Press 'Ctrl' to pick up a pebble or worm
- 3. Hold your mouse down and drag the pebble/worm to adjust your spring and angles
- 4. Release the mouse to throw the object
- 5. Let's start!
- */
 public class TutorialUIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text displayText;
     [SerializeField] private Button nextButton;
     [SerializeField] private Text buttonText;
     [SerializeField] private string[] textBatches;
+    [SerializeField] private GameObject arrow; // Reference to the arrow GameObject
+    [SerializeField] private GameObject[] objectsToReference; // Reference to objects in the scene
+    [SerializeField] private float arrowYOffset = 2.0f; // New variable for the Y-axis offset
+    [SerializeField] private Camera mainCamera;
+
     public GameObject eagle;
 
     private float EAGLE_LIMIT_UP = 100;
     private float EAGLE_LIMIT_DOWN = 65;
-    private float EAGLE_LIMIT_LEFT = 300; // horizontal: z: + <- -
-    private float EAGLE_LIMIT_RIGHT = 100; // horizontal: z: + <- -
-
-    //public SpawnTutorial spawn;
+    private float EAGLE_LIMIT_LEFT = 300;
+    private float EAGLE_LIMIT_RIGHT = 100;
 
     private int currentBatch = 0;
 
@@ -47,6 +33,16 @@ public class TutorialUIManager : MonoBehaviour
         if (batchIndex < 0 || batchIndex >= textBatches.Length) return;
 
         displayText.text = textBatches[batchIndex];
+
+        // Control arrow visibility and position based on currentBatch
+        if (batchIndex >= 0 && batchIndex < objectsToReference.Length)
+        {
+            SetArrowPosition(objectsToReference[batchIndex].transform.position);
+        }
+        else
+        {
+            arrow.SetActive(false); // Hide the arrow
+        }
 
         if (batchIndex == 6)
         {
@@ -76,12 +72,8 @@ public class TutorialUIManager : MonoBehaviour
 
     private void EndTutorial()
     {
-        nextButton.gameObject.SetActive(false); // 隐藏按钮
-        displayText.gameObject.SetActive(false); // 隐藏文本
-        // backgroundPanel.SetActive(false); // 隐藏背景遮罩
-        //
-        // Time.timeScale = 1;
-        // Time.fixedDeltaTime = 0.02f;  // 重置fixedDeltaTime
+        nextButton.gameObject.SetActive(false); // Hide the button
+        displayText.gameObject.SetActive(false); // Hide the text
     }
 
     private void SpawnRandomEagle()
@@ -91,4 +83,22 @@ public class TutorialUIManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(0, y, z);
         Instantiate(eagle, spawnPos, eagle.transform.rotation);
     }
+
+    private void SetArrowPosition(Vector3 referenceObjectPosition)
+    {
+        arrow.SetActive(true);
+    
+        // Convert the 3D object's world position to screen position
+        Vector3 screenPosition = mainCamera.WorldToScreenPoint(referenceObjectPosition);
+    
+        // Convert the screen position to canvas position
+        Vector2 canvasPosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(arrow.transform.parent.GetComponent<RectTransform>(), screenPosition, mainCamera, out canvasPosition);
+    
+        // Set the arrow's position to be slightly above the object's position
+        canvasPosition.y += 30;  // 50 is just an example offset, adjust as needed
+    
+        arrow.GetComponent<RectTransform>().anchoredPosition = canvasPosition;
+    }
+
 }
