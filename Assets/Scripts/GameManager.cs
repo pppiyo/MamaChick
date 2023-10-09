@@ -62,4 +62,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("you win!");
     }
+
+    void EndTutorial()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }
