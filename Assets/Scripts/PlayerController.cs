@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 40.0f;
     public float backRange = 300.0f;
     public float forwardRange = 15.0f;
+
+    public AudioClip mamaThrowAudio;
 
     void Start() { }
 

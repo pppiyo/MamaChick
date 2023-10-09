@@ -262,26 +262,6 @@ public class SpawnManager : MonoBehaviour
         );
     }
 
-    void SpawnRandomEagle()
-    {
-        float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
-        float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
-        Vector3 spawnPos = new Vector3(0, y, z);
-        Instantiate(allPrefabs[EAGLE_INDEX], spawnPos, allPrefabs[EAGLE_INDEX].transform.rotation);
-    }
-
-    void SpawnRandomPebble()
-    {
-        float y = PEBBLE_Y;
-        float z = Random.Range(PEBBLE_LIMIT_LEFT, PEBBLE_LIMIT_RIGHT);
-        Vector3 spawnPos = new Vector3(0, y, z);
-        Instantiate(
-            allPrefabs[PEBBLE_INDEX],
-            spawnPos,
-            allPrefabs[PEBBLE_INDEX].transform.rotation
-        );
-    }
-
     // void SpawnRandomPrefab()
     // {
     //     float x = 0;

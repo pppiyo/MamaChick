@@ -124,7 +124,7 @@ public class Projectile : MonoBehaviour
                     }
                     if (!anyConnected)
                     {
-                        // Debug.Log("Hooking new Projectile");
+                        Debug.Log("Hooking new Projectile");
                         collider.gameObject.AddComponent<SpringJoint>();
                         collider.gameObject.transform.position = new Vector3(
                             SlingshotHook.transform.position.x,
@@ -170,40 +170,25 @@ public class Projectile : MonoBehaviour
                         GameObject predictionProjectile;
                         if (indPebbles.tag == "Pebble")
                         {
-                            predictionProjectile = Instantiate(
-                                projectilePrefab1,
-                                spawnPosition,
-                                spawnRotation
-                            );
+                            // predictionProjectile = Instantiate(projectilePrefab1, spawnPosition, spawnRotation);
                             //predictionProjectile.gameObject.layer = trajectoryLayerIndex1;
                         }
                         else
                         {
-                            predictionProjectile = Instantiate(
-                                projectilePrefab2,
-                                spawnPosition,
-                                spawnRotation
-                            );
+                            // predictionProjectile = Instantiate(projectilePrefab2, spawnPosition, spawnRotation);
                             //  predictionProjectile.gameObject.layer = trajectoryLayerIndex2;
                         }
-                        predictionProjectile.name = "newProjectile";
-                        predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic =
-                            true;
-                        predictionProjectile.gameObject.AddComponent<SpringJoint>();
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().connectedBody =
-                            SlingshotHook.GetComponent<Rigidbody>();
-                        predictionProjectile.gameObject
-                            .GetComponent<SpringJoint>()
-                            .autoConfigureConnectedAnchor = false;
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().anchor =
-                            transform.InverseTransformPoint(SlingshotHook.transform.position);
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().spring = spring;
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().damper = damper;
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().minDistance =
-                            minDistance;
-                        predictionProjectile.gameObject.GetComponent<SpringJoint>().maxDistance =
-                            maxDistance;
-                        StartCoroutine(UnHookTrajectory(predictionProjectile));
+                        // predictionProjectile.name = "newProjectile";
+                        // predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                        // predictionProjectile.gameObject.AddComponent<SpringJoint>();
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().connectedBody = SlingshotHook.GetComponent<Rigidbody>();
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().autoConfigureConnectedAnchor = false;
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().anchor = transform.InverseTransformPoint(SlingshotHook.transform.position);
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().spring = spring;
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().damper = damper;
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().minDistance = minDistance;
+                        // predictionProjectile.gameObject.GetComponent<SpringJoint>().maxDistance = maxDistance;
+                        // StartCoroutine(UnHookTrajectory(predictionProjectile));
                     }
                 }
             }

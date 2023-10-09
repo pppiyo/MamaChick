@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7628719681671806924}
   - component: {fileID: 265609066}
-  - component: {fileID: 265609065}
+  - component: {fileID: 3376017444981736598}
   m_Layer: 0
   m_Name: Mama
   m_TagString: Player
@@ -51,7 +51,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &265609065
+--- !u!114 &3376017444981736598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,11 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21132fef4249f4228834e34912a5ae8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
   horizontalInput: 0
   speed: 40
   backRange: 300
-  forwardRange: 10
+  forwardRange: 15
+  mamaThrowAudio: {fileID: 8300000, guid: 49444a2ee24a540c1ad93f69c7dd0052, type: 3}
 --- !u!1001 &4383110686996881909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,6 +75,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7628719681671806924}
     m_Modifications:
+    - target: {fileID: 2653456408876012921, guid: 08ccf8d2ed6854d94a08a22a681f37c6, type: 3}
+      propertyPath: ctrlInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5326555051465174910, guid: 08ccf8d2ed6854d94a08a22a681f37c6, type: 3}
       propertyPath: m_RootOrder
       value: 1
