@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private float currentTime = 0f;
     private bool isGameOver = false;
+    //private bool spawn_eagle = false;
 
     void Start()
     {
@@ -35,6 +36,21 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    //public bool get_spawn_eagle()
+    //{
+    //    return spawn_eagle;
+    //}
+
+    //public void spawnEagle()
+    //{
+    //    spawn_eagle = true;
+    //}
+
+    //public void spawnDone()
+    //{
+    //    spawn_eagle = false;
+    //}
 
     public void chickDestory()
     {
@@ -63,7 +79,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("you win!");
     }
 
-    void EndTutorial()
+    public void EndTutorial()
     {
         SceneManager.LoadScene("Main");
     }
