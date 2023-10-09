@@ -175,7 +175,11 @@ public class Projectile : MonoBehaviour
                         }
                         else
                         {
-                            // predictionProjectile = Instantiate(projectilePrefab2, spawnPosition, spawnRotation);
+                            predictionProjectile = Instantiate(
+                                projectilePrefab2,
+                                spawnPosition,
+                                spawnRotation
+                            );
                             //  predictionProjectile.gameObject.layer = trajectoryLayerIndex2;
                         }
                         // predictionProjectile.name = "newProjectile";

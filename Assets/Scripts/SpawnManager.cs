@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour
         fruit1 = GameObject.FindGameObjectsWithTag("Fruit1");
         if (fruit1.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
-            Instantiate(allPrefabs[FRUIT_1_INDEX], new Vector3(0, 50, -70), Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_1_INDEX], new Vector3(0, 50, -89), Quaternion.identity);
             cooldown = 20f;
             spawned = 1;
         }
@@ -93,13 +93,15 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(allPrefabs[FRUIT_2_INDEX], new Vector3(0, 70, -90), Quaternion.identity);
             cooldown = 20f;
+            Instantiate(allPrefabs[FRUIT_2_INDEX], new Vector3(0, 70, -89), Quaternion.identity);
+            cooldown = 20f;
             spawned = 1;
         }
 
         fruit3 = GameObject.FindGameObjectsWithTag("Fruit3");
         if (fruit3.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
-            Instantiate(allPrefabs[FRUIT_3_INDEX], new Vector3(0, 70, -120), Quaternion.identity);
+            Instantiate(allPrefabs[FRUIT_3_INDEX], new Vector3(0, 70, -150), Quaternion.identity);
             cooldown = 20f;
             spawned = 1;
         }
@@ -112,69 +114,69 @@ public class SpawnManager : MonoBehaviour
             spawned = 1;
         }
 
-        fruit5 = GameObject.FindGameObjectsWithTag("Fruit5");
-        if (fruit5.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_5_INDEX], new Vector3(0, 55, -160), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit5 = GameObject.FindGameObjectsWithTag("Fruit5");
+        // if (fruit5.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_5_INDEX], new Vector3(0, 55, -160), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit6 = GameObject.FindGameObjectsWithTag("Fruit6");
-        if (fruit6.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_6_INDEX], new Vector3(0, 80, -45), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit6 = GameObject.FindGameObjectsWithTag("Fruit6");
+        // if (fruit6.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_6_INDEX], new Vector3(0, 80, -45), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit7 = GameObject.FindGameObjectsWithTag("Fruit7");
-        if (fruit7.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_7_INDEX], new Vector3(0, 55, -15), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit7 = GameObject.FindGameObjectsWithTag("Fruit7");
+        // if (fruit7.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_7_INDEX], new Vector3(0, 55, -15), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit8 = GameObject.FindGameObjectsWithTag("Fruit8");
-        if (fruit8.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_8_INDEX], new Vector3(0, 55, -100), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit8 = GameObject.FindGameObjectsWithTag("Fruit8");
+        // if (fruit8.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_8_INDEX], new Vector3(0, 55, -100), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit9 = GameObject.FindGameObjectsWithTag("Fruit9");
-        if (fruit9.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_9_INDEX], new Vector3(0, 55, -135), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit9 = GameObject.FindGameObjectsWithTag("Fruit9");
+        // if (fruit9.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_9_INDEX], new Vector3(0, 55, -135), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit10 = GameObject.FindGameObjectsWithTag("Fruit10");
-        if (fruit10.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_10_INDEX], new Vector3(0, 70, -30), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit10 = GameObject.FindGameObjectsWithTag("Fruit10");
+        // if (fruit10.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_10_INDEX], new Vector3(0, 70, -30), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit11 = GameObject.FindGameObjectsWithTag("Fruit11");
-        if (fruit11.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_11_INDEX], new Vector3(0, 70, -60), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit11 = GameObject.FindGameObjectsWithTag("Fruit11");
+        // if (fruit11.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_11_INDEX], new Vector3(0, 70, -60), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
-        fruit12 = GameObject.FindGameObjectsWithTag("Fruit12");
-        if (fruit12.Length <= 0 && (cooldown <= 0 || startSetup == 0))
-        {
-            Instantiate(allPrefabs[FRUIT_12_INDEX], new Vector3(0, 55, -50), Quaternion.identity);
-            cooldown = 20f;
-            spawned = 1;
-        }
+        // fruit12 = GameObject.FindGameObjectsWithTag("Fruit12");
+        // if (fruit12.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+        // {
+        //     Instantiate(allPrefabs[FRUIT_12_INDEX], new Vector3(0, 55, -50), Quaternion.identity);
+        //     cooldown = 20f;
+        //     spawned = 1;
+        // }
 
         fruit13 = GameObject.FindGameObjectsWithTag("Fruit13");
         if (fruit13.Length <= 0 && (cooldown <= 0 || startSetup == 0))
@@ -184,9 +186,17 @@ public class SpawnManager : MonoBehaviour
             spawned = 1;
         }
         if (spawned == 0)
-        {
-            cooldown -= Time.deltaTime;
-        }
+            // fruit13 = GameObject.FindGameObjectsWithTag("Fruit13");
+            // if (fruit13.Length <= 0 && (cooldown <= 0 || startSetup == 0))
+            // {
+            //     Instantiate(allPrefabs[FRUIT_13_INDEX], new Vector3(0, 80, -80), Quaternion.identity);
+            //     cooldown = 20f;
+            //     spawned = 1;
+            // }
+            if (spawned == 0)
+            {
+                cooldown -= Time.deltaTime;
+            }
         if (startSetup == 0)
         {
             startSetup = 1;

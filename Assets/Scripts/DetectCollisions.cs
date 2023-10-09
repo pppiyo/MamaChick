@@ -68,8 +68,8 @@ public class DetectCollisions : MonoBehaviour
                     rb.isKinematic = false;
                     rb.detectCollisions = true;
 
-                    Vector3 setVelocity = other.gameObject.GetComponent<Rigidbody>().velocity;
-                    rb.velocity = setVelocity;
+                    // Vector3 setVelocity = other.gameObject.GetComponent<Rigidbody>().velocity;
+                    // rb.velocity = setVelocity;
                     gameObject.GetComponent<SphereCollider>().isTrigger = false;
                 }
             }
