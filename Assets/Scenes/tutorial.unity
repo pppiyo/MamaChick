@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -697,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4310360441583080515, guid: c79f69a802a068b4584c131f5ed0ee57, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4310360441583080515, guid: c79f69a802a068b4584c131f5ed0ee57, type: 3}
       propertyPath: m_AnchorMax.x
@@ -805,6 +805,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4310360440129375032, guid: c79f69a802a068b4584c131f5ed0ee57, type: 3}
   m_PrefabInstance: {fileID: 526541245}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &526541248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4310360439644557320, guid: c79f69a802a068b4584c131f5ed0ee57, type: 3}
+  m_PrefabInstance: {fileID: 526541245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526541246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &559416980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1042,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5012307194525803123, guid: 60bb91908833d41d7815baa1238991be, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5012307194525803123, guid: 60bb91908833d41d7815baa1238991be, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1446,9 +1457,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341282642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fffd404bf624195a400678dff1fa00, type: 3}
+  m_Script: {fileID: 11500000, guid: d2db22c11f3afd143b603bb1ba1549b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownText: {fileID: 526541248}
+  gameTime: 1200
+  chickCnt: 3
 --- !u!1001 &1365814362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2071,7 +2085,7 @@ Transform:
   - {fileID: 943323148}
   - {fileID: 192520105}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507873742 stripped
 GameObject:
@@ -2494,5 +2508,5 @@ Transform:
   - {fileID: 141918672}
   - {fileID: 1860893369}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

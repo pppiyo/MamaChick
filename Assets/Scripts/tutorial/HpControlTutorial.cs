@@ -6,7 +6,7 @@ using UnityEngine;
 public class HpControlTutorial : MonoBehaviour
 {
     private cubeHealth health;
-    private totalPoints p;
+    //private totalPoints p;
     private chickMP MP;
     private Vector3 originalScale;
     //public ObjectSpawner objectSpawner;
@@ -17,8 +17,8 @@ public class HpControlTutorial : MonoBehaviour
         originalScale = transform.localScale;
         health = GetComponent<cubeHealth>();
         MP = GetComponent<chickMP>();
-        p = GetComponent<totalPoints>();
-        Debug.Log(p);
+        //p = GetComponent<totalPoints>();
+        //Debug.Log(p);
     }
 
     // Update is called once per frame
@@ -76,12 +76,14 @@ public class HpControlTutorial : MonoBehaviour
             {
                 MP.AddPoint(numericValue);
                 // totoal point + 1
-                p.AddScore(1);
-                if (p.points == 1)
-                {
-                    // tutorial finished
-                    GlobalVariables.tutorialEnd = true;
-                }
+                GlobalVariables.addScore = true;
+                GlobalVariables.tutorialEnd = true;
+                //p.AddScore(1);
+                //if (p.points == 1)
+                //{
+                //    // tutorial finished
+                //    GlobalVariables.tutorialEnd = true;
+                //}
             }
             else if (MP.mp + numericValue < 21)
             {

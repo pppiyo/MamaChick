@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Text countdownText;
     public float gameTime = 120f; // 游戏时间为2分钟
     public int chickCnt = 3;
+    private totalPoints p;
 
     private float currentTime = 0f;
     private bool isGameOver = false;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        p = GetComponent<totalPoints>();
         currentTime = gameTime;
         UpdateCountdownText();
     }
@@ -32,6 +34,16 @@ public class GameManager : MonoBehaviour
             {
                 EndGame();
             }
+        }
+        if (GlobalVariables.addScore)
+        {
+            GlobalVariables.addScore = false;
+            p.AddScore(1);
+        }
+        if (p.points == 3)
+        {
+            // win this game
+            GlobalVariables.win = true;
         }
         if (GlobalVariables.win)
         {

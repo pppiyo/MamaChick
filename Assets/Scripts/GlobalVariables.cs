@@ -11,4 +11,6 @@ public static class GlobalVariables
     public static bool tutorialEnd = false;
 
     public static bool tutorialFailed = false;
+
+    public static bool addScore = false;
 }
