@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -570,18 +570,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5246390699095627471, guid: 2f18e02d7a2024b00a59468e080339d4, type: 3}
   m_PrefabInstance: {fileID: 559416980}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &360679698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360679692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380f4fed80fdc2f47871ffa50d3b4cec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &360679699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,7 +585,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1814741599}
   maxHp: 100
   curHP: 100
-  decreaseRatePerMinute: 40
+  decreaseRatePerMinute: 20
 --- !u!114 &360679700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +600,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mp: 0
   pointText: {fileID: 1188075959}
+--- !u!114 &360679701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360679692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fffd404bf624195a400678dff1fa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &526541245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,7 +1233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.000000119209275, y: 0.70710677, z: 0.000000059604638, w: 0.7071068}
-  m_LocalPosition: {x: -240, y: 44, z: -0}
+  m_LocalPosition: {x: -250, y: 44, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1486608405}
-  gameTime: 300
+  gameTime: 1200
   chickCnt: 3
 --- !u!114 &1341282650
 MonoBehaviour:
