@@ -5,9 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{
-    // 声明一个静态实例，以便其他类可以访问
-    public static GameManager instance;
+{ 
 
     public Text countdownText;
     public float gameTime = 120f; // 游戏时间为2分钟
@@ -35,6 +33,26 @@ public class GameManager : MonoBehaviour
                 EndGame();
             }
         }
+        if (GlobalVariables.win)
+        {
+            GlobalVariables.win = false;
+            WinGame();
+        }
+        if (GlobalVariables.chick <= 0)
+        {
+            GlobalVariables.chick = 3;
+            EndGame();
+        }
+        if (GlobalVariables.tutorialEnd)
+        {
+            GlobalVariables.tutorialEnd = false;
+            EndTutorial();
+        }
+        if (GlobalVariables.tutorialFailed)
+        {
+            GlobalVariables.tutorialFailed = false;
+            restartTutorial();
+        }
     }
 
     //public bool get_spawn_eagle()
@@ -52,15 +70,6 @@ public class GameManager : MonoBehaviour
     //    spawn_eagle = false;
     //}
 
-    public void chickDestory()
-    {
-        chickCnt--;
-        if (chickCnt <= 0)
-        {
-            EndGame();
-        }
-    }
-
     void UpdateCountdownText()
     {
         int minutes = Mathf.FloorToInt(currentTime / 60);
@@ -71,16 +80,28 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         isGameOver = true;
-        SceneManager.LoadScene("AttackingEagle");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Start Menu");
     }
 
     public void WinGame()
     {
+        // TODO
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Start Menu");
         Debug.Log("you win!");
     }
 
     public void EndTutorial()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Start Menu");
+    }
+
+    public void restartTutorial()
+    {
+        Debug.Log("called restart");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("tutorial");
     }
 }

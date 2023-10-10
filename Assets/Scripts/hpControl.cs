@@ -79,7 +79,7 @@ public class hpControl : MonoBehaviour
                 if (p.points == 3)
                 {
                     // win this game
-                    GameManager.instance.WinGame();
+                    GlobalVariables.win = true;
                 }
             } else if (MP.mp + numericValue < 21)
             {
@@ -89,7 +89,7 @@ public class hpControl : MonoBehaviour
                 // lose one chick
                 Destroy(gameObject);
                 // #chick = 0, game over
-                GameManager.instance.chickDestory();
+                GlobalVariables.chick--;
             }
             Destroy(collision.gameObject);
         }
