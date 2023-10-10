@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6809856478610008338}
   - component: {fileID: 2816829830062058184}
   m_Layer: 0
-  m_Name: Chick
+  m_Name: Chick1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8155067408174938956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.075488, y: 2.732933, z: -43.436317}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
