@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2017,15 +2017,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: depth
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: spring
-      value: 5000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: interval
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: boxSize.x
@@ -2037,7 +2037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: maxDistance
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: minDistance
@@ -2045,7 +2045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: releaseDelay
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: SlingshotHook
