@@ -3,22 +3,44 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Chick
+  - Eagle
+  - Pebble
+  - Worm
+  - Fruit
+  - GrassFloor
+  - trajectoryPebble
+  - trajectoryWorm
+  - Fruit11
+  - Fruit5
+  - Fruit2
+  - Fruit3
+  - Fruit7
+  - Fruit12
+  - Fruit6
+  - Fruit13
+  - Fruit9
+  - Fruit4
+  - Fruit10
+  - Fruit8
+  - Fruit1
+  - Fence
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fruit
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Eagle
+  - Pebble
+  - Chick
+  - Worm
+  - GrassFloor
+  - TrajectoryPebble
+  - MamaChick
+  - TrajectoryWorm
   - 
   - 
   - 
