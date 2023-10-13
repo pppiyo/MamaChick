@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour
         UpdateCountdownText();
     }
 
-    
-
     void Update()
     {
         if (!isGameOver)
