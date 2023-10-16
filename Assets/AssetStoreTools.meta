@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/MamaParts.meta
+guid: e52f5d7ee53fe4533960dc1da36cc289
+========
 guid: 8466fccc5fcd4d74ea48c2a9411d446d
+>>>>>>>> master:Assets/AssetStoreTools.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

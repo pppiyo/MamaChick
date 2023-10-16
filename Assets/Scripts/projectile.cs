@@ -21,20 +21,26 @@ public class Projectile : MonoBehaviour
     public GameObject projectilePrefab2;
     public string namePattern;
     public Vector3 boxSize;
+<<<<<<< HEAD
+=======
     public float launchSpeed = 10.0f;
     public int numPoints = 100;
     public float timeStep = 0.1f;
+>>>>>>> master
     private bool isPressed = false;
     private float timer = 0f;
     public float interval = 2f;
     private Vector3 mousePosition;
     private List<GameObject> allPebbles = new List<GameObject>();
+<<<<<<< HEAD
+=======
     private LineRenderer slingshotBand;
     private Color startColor = Color.red;
     private Color endColor = Color.yellow;
     private Color slingshotColor = Color.black;
     private Gradient gradient;
     private Gradient slingshotGradient;
+>>>>>>> master
 
     void Start()
     {
@@ -105,6 +111,21 @@ public class Projectile : MonoBehaviour
         StartCoroutine(DestroyTrajectory(indPebble));
     }
 
+    IEnumerator UnHookProjectile(GameObject indPebble)
+    {
+        yield return new WaitForSeconds(releaseDelay);
+        Debug.Log("Unhooking the projectile");
+        DestroyImmediate(indPebble.GetComponent<SpringJoint>());
+
+    }
+    IEnumerator UnHookTrajectory(GameObject indPebble)
+    {
+        indPebble.GetComponent<Rigidbody>().isKinematic = false;
+        yield return new WaitForSeconds(releaseDelay);
+        Debug.Log("Unhooking the projectile");
+        DestroyImmediate(indPebble.GetComponent<SpringJoint>());
+    }
+
     void OnMouseDown()
     {
         isPressed = true;
@@ -143,6 +164,8 @@ public class Projectile : MonoBehaviour
             if (PebbleNames.IsMatch(indObject.name))
             {
                 allPebbles.Add(indObject);
+<<<<<<< HEAD
+=======
             }
             if (indObject.GetComponent<SpringJoint>() != null && !isPressed)
             {
@@ -154,6 +177,7 @@ public class Projectile : MonoBehaviour
                 slingshotBand.SetPosition(0, SlingshotHook.GetComponent<Rigidbody>().position);
                 slingshotBand.SetPosition(1, indObject.transform.position);
                 slingshotBand.colorGradient = slingshotGradient;
+>>>>>>> master
             }
         }
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize);
@@ -207,8 +231,13 @@ public class Projectile : MonoBehaviour
             {
                 if (indPebbles.GetComponent<SpringJoint>() != null)
                 {
+<<<<<<< HEAD
+                   mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
+                   indPebbles.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+=======
                     mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
                     indPebbles.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+>>>>>>> master
 
                     // Trajectory prediction with dummy Projectiles
                     if (timer >= interval)
@@ -226,7 +255,11 @@ public class Projectile : MonoBehaviour
                         else
                         {
                             predictionProjectile = Instantiate(projectilePrefab2, spawnPosition, spawnRotation);
+<<<<<<< HEAD
+                          //  predictionProjectile.gameObject.layer = trajectoryLayerIndex2;
+=======
                             //  predictionProjectile.gameObject.layer = trajectoryLayerIndex2;
+>>>>>>> master
                         }
                         predictionProjectile.name = "newProjectile";
                         predictionProjectile.gameObject.GetComponent<Rigidbody>().isKinematic = true;

@@ -5,11 +5,25 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
+<<<<<<< HEAD
+{
+    // 声明一个静态实例，以便其他类可以访问
+    public static GameManager instance;
+=======
 { 
+>>>>>>> master
 
     public Text countdownText;
     public float gameTime = 120f; // 游戏时间为2分钟
     public int chickCnt = 3;
+<<<<<<< HEAD
+
+    private float currentTime = 0f;
+    private bool isGameOver = false;
+
+    void Start()
+    {
+=======
     private totalPoints p;
 
     private float currentTime = 0f;
@@ -19,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         p = GetComponent<totalPoints>();
+>>>>>>> master
         currentTime = gameTime;
         UpdateCountdownText();
     }
@@ -35,6 +50,19 @@ public class GameManager : MonoBehaviour
                 EndGame();
             }
         }
+<<<<<<< HEAD
+    }
+
+    public void chickDestory()
+    {
+        chickCnt--;
+        if (chickCnt <= 0)
+        {
+            EndGame();
+        }
+    }
+
+=======
         if (GlobalVariables.addScore)
         {
             GlobalVariables.addScore = false;
@@ -82,6 +110,7 @@ public class GameManager : MonoBehaviour
     //    spawn_eagle = false;
     //}
 
+>>>>>>> master
     void UpdateCountdownText()
     {
         int minutes = Mathf.FloorToInt(currentTime / 60);
@@ -92,12 +121,20 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         isGameOver = true;
+<<<<<<< HEAD
+        SceneManager.LoadScene("AttackingEagle");
+=======
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Start Menu");
+>>>>>>> master
     }
 
     public void WinGame()
     {
+<<<<<<< HEAD
+        Debug.Log("you win!");
+    }
+=======
         // TODO
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Start Menu");
@@ -116,4 +153,5 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("tutorial");
     }
+>>>>>>> master
 }
