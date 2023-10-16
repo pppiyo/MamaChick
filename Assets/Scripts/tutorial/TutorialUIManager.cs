@@ -13,12 +13,12 @@ public class TutorialUIManager : MonoBehaviour
     [SerializeField] private float arrowYOffset = 2.0f; // New variable for the Y-axis offset
     [SerializeField] private Camera mainCamera;
 
-    public GameObject eagle;
+    // public GameObject eagle;
 
-    private float EAGLE_LIMIT_UP = 100;
-    private float EAGLE_LIMIT_DOWN = 65;
-    private float EAGLE_LIMIT_LEFT = 300;
-    private float EAGLE_LIMIT_RIGHT = 100;
+    // private float EAGLE_LIMIT_UP = 100;
+    // private float EAGLE_LIMIT_DOWN = 65;
+    // private float EAGLE_LIMIT_LEFT = 300;
+    // private float EAGLE_LIMIT_RIGHT = 100;
 
     private int currentBatch = 0;
 
@@ -78,13 +78,13 @@ public class TutorialUIManager : MonoBehaviour
         arrow.SetActive(false); // Hide the arrow
     }
 
-    private void SpawnRandomEagle()
-    {
-        float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
-        float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
-        Vector3 spawnPos = new Vector3(0, y, z);
-        Instantiate(eagle, spawnPos, eagle.transform.rotation);
-    }
+    // private void SpawnRandomEagle()
+    // {
+    //     float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
+    //     float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
+    //     Vector3 spawnPos = new Vector3(0, y, z);
+    //     Instantiate(eagle, spawnPos, eagle.transform.rotation);
+    // }
 
     private void SetArrowPosition(Vector3 referenceObjectPosition)
     {
