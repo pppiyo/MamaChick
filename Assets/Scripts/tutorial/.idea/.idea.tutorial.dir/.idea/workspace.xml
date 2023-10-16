@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2cd815c-1c22-40de-85ae-0bc5556c1911" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prefabs/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/tutorial.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tutorial.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tutorial.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HpControlTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HpControlTutorial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpawnTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpawnTutorial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TutorialUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TutorialUIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +22,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../hpControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HpControlTutorial.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SpawnTutorial.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TutorialUIManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../tutorial/MamaChick/Assets/Scripts/GlobalVariables.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../tutorial/MamaChick/Assets/Scripts/tutorial/HpControlTutorial.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../tutorial/MamaChick/Assets/Scripts/tutorial/SpawnTutorial.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../tutorial/MamaChick/Assets/Scripts/tutorial/TutorialUIManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -59,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697422724819</updated>
-      <workItem from="1697422727244" duration="4946000" />
+      <workItem from="1697422727244" duration="10463000" />
     </task>
     <servers />
   </component>
