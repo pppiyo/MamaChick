@@ -79,7 +79,7 @@ public class HpControlTutorial : MonoBehaviour
                 if (p.points == 1)
                 {
                     // tutorial finished
-                    // GlobalVariables.tutorialEnd = true;
+                    GlobalVariables.tutorialEnd = true;
                 }
             }
             else if (MP.mp + numericValue < 21)
@@ -91,7 +91,7 @@ public class HpControlTutorial : MonoBehaviour
                 // lose one chick
                 Destroy(gameObject);
                 // #chick = 0, game over
-                // GlobalVariables.tutorialFailed = true;
+                GlobalVariables.tutorialFailed = true;
             }
             Destroy(collision.gameObject);
         }
