@@ -30,6 +30,7 @@ public class TutorialUIManager : MonoBehaviour
 
     private void ShowBatch(int batchIndex)
     {
+        // Debug.Log(textBatches.Length);
         if (batchIndex < 0 || batchIndex >= textBatches.Length) return;
 
         displayText.text = textBatches[batchIndex];
@@ -44,11 +45,11 @@ public class TutorialUIManager : MonoBehaviour
             arrow.SetActive(false); // Hide the arrow
         }
 
-        if (batchIndex == 6)
-        {
-            // spawn eagle
-            SpawnRandomEagle();
-        }
+        // if (batchIndex == 6)
+        // {
+        //     // spawn eagle
+        //     SpawnRandomEagle();
+        // }
 
         // 如果这是最后一批文字，更改按钮的文本
         if (batchIndex == textBatches.Length - 1)
@@ -74,6 +75,7 @@ public class TutorialUIManager : MonoBehaviour
     {
         nextButton.gameObject.SetActive(false); // Hide the button
         displayText.gameObject.SetActive(false); // Hide the text
+        arrow.SetActive(false); // Hide the arrow
     }
 
     private void SpawnRandomEagle()
