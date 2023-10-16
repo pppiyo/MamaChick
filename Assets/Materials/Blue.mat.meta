@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Materials/Blue.mat.meta
 guid: de14eb412db0042e788fb33836832c07
-========
-guid: e825acd545a695a46b1bca7760c58796
->>>>>>>> master:Assets/Materials/DarkGreen.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

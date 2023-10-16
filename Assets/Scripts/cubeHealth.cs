@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-<<<<<<< HEAD
-=======
-using UnityEngine.SceneManagement;
->>>>>>> master
 
 public class cubeHealth : MonoBehaviour
 {
@@ -39,17 +35,6 @@ public class cubeHealth : MonoBehaviour
                 curHP = 0;
                 // 物体被销毁
                 Destroy(gameObject);
-<<<<<<< HEAD
-=======
-                if (SceneManager.GetActiveScene().name == "tutorial")
-                {
-                    GlobalVariables.tutorialEnd = true;
-                } else if (SceneManager.GetActiveScene().name == "main")
-                {
-                    GlobalVariables.chick--;
-                }
-                
->>>>>>> master
             }
 
             yield return null;

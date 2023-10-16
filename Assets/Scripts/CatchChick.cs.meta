@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/CatchChick.cs.meta
 guid: 02bae011ad8a0104ba83a42ecbe0aaaa
-========
-guid: 51e8164fec2334e0d9c911231357043e
->>>>>>>> master:Assets/Scripts/DestroyOutOfBounds.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

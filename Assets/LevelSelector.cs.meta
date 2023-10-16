@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/LevelSelector.cs.meta
 guid: 8649dd437ee7940cdb8860a9aa216c5e
-========
-guid: 02bae011ad8a0104ba83a42ecbe0aaaa
->>>>>>>> master:Assets/Scripts/CatchChick.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
