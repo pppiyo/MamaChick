@@ -82,7 +82,11 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD
         int spawned = 0; 
+=======
+        int spawned = 0;
+>>>>>>> master
         fruit1 = GameObject.FindGameObjectsWithTag("Fruit1");
         if (fruit1.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
@@ -95,7 +99,11 @@ public class SpawnManager : MonoBehaviour
         if (fruit2.Length <= 0 && (cooldown <= 0 || startSetup == 0))
         {
             Instantiate(allPrefabs[FRUIT_2_INDEX], new Vector3(0, 70, -90), Quaternion.identity);
+<<<<<<< HEAD
             cooldown = 20f; 
+=======
+            cooldown = 20f;
+>>>>>>> master
             spawned = 1;
         }
 

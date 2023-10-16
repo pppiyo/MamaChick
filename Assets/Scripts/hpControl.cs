@@ -6,7 +6,11 @@ using UnityEngine;
 public class hpControl : MonoBehaviour
 {
     private cubeHealth health;
+<<<<<<< HEAD
     private totalPoints p;
+=======
+    //private totalPoints p;
+>>>>>>> master
     private chickMP MP;
     private Vector3 originalScale;
     //public ObjectSpawner objectSpawner;
@@ -17,7 +21,11 @@ public class hpControl : MonoBehaviour
         originalScale = transform.localScale;
         health = GetComponent<cubeHealth>();
         MP = GetComponent<chickMP>();
+<<<<<<< HEAD
         p = GetComponent<totalPoints>();
+=======
+        //p = GetComponent<totalPoints>();
+>>>>>>> master
     }
 
     // Update is called once per frame
@@ -75,12 +83,22 @@ public class hpControl : MonoBehaviour
             {
                 MP.AddPoint(numericValue);
                 // totoal point + 1
+<<<<<<< HEAD
                 p.AddScore(1);
                 if (p.points == 3)
                 {
                     // win this game
                     GameManager.instance.WinGame();
                 }
+=======
+                GlobalVariables.addScore = true;
+                //p.AddScore(1);
+                //if (p.points == 3)
+                //{
+                //    // win this game
+                //    GlobalVariables.win = true;
+                //}
+>>>>>>> master
             } else if (MP.mp + numericValue < 21)
             {
                 MP.AddPoint(numericValue);
@@ -89,7 +107,11 @@ public class hpControl : MonoBehaviour
                 // lose one chick
                 Destroy(gameObject);
                 // #chick = 0, game over
+<<<<<<< HEAD
                 GameManager.instance.chickDestory();
+=======
+                GlobalVariables.chick--;
+>>>>>>> master
             }
             Destroy(collision.gameObject);
         }

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7643022344331420546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7643022344331420548}
+  - component: {fileID: 7643022344331420549}
+  - component: {fileID: 7643022344331420551}
+  m_Layer: 0
+  m_Name: TutorialUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7643022344331420548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643022344331420546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 197, y: 200.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7643022344331420549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643022344331420546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8276bcd291b4bf789b1da6b2247836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 0}
+  nextButton: {fileID: 0}
+  buttonText: {fileID: 0}
+  textBatches:
+  - This is the chick that you're gonna feed
+  - Chick's hp will decrease as time goes by
+  - When hp drops to 0, the chick disappears and no points will be gained through
+    this chick
+  - 'You can pick up any worm on the ground to feed the chick '
+  - 'You will gain 1 point by feeding a chick with exactly 21 magic points of apples '
+  - Your goal is to gain as many points as possible in 5 minutes
+  - There will be randomly spawned eagles catching chicken, you can throw pebble
+    to hit them down
+  - Press '<-' and '->' (or 'A' and 'D') to control the movement of Mama
+  - Press 'Ctrl' to pick up a pebble or worm
+  - Hold your mouse down and drag the pebble/worm to adjust your spring and angles
+  - Release the mouse to throw the object
+  - Let's start!
+--- !u!114 &7643022344331420551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643022344331420546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8276bcd291b4bf789b1da6b2247836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 0}
+  nextButton: {fileID: 0}
+  buttonText: {fileID: 0}
+  textBatches: []
