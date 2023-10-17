@@ -10,17 +10,52 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.CompareTag("Chick") && other.gameObject.CompareTag("Apple"))
+        if (gameObject.CompareTag("Chick"))
         {
-            transform.localScale += new Vector3(add.x, add.y, add.z);
+            if (other.gameObject.CompareTag("Apple")) 
+            {
+                transform.localScale += new Vector3(add.x, add.y, add.z);
+            }
+
             Destroy(other.gameObject);
         }
 
-        if (gameObject.CompareTag("Eagle"))
+        else if (gameObject.CompareTag("Eagle"))
         {
             if (other.gameObject.CompareTag("Apple"))
             {
                 return;
+            }
+            else if (other.gameObject.CompareTag("Apple"))
+            {
+                return;
+            }
+            else if (other.gameObject.CompareTag("Pebble"))
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                GameManager.setfree = false;
+                GameManager.nearest = null;
+            }
+        }
+        else if (gameObject.CompareTag("Worm"))
+        {
+            if (other.gameObject.CompareTag("Floor"))
+            {
+                Debug.Log("Worm hit the floor");
+                gameObject.GetComponent<DragAndShoot>().enabled = false;
+                GameManager.setfree = false;
+                GameManager.nearest = null;
+            }
+        }
+        else if (gameObject.CompareTag("Pebble"))
+        {
+            if (other.gameObject.CompareTag("Floor"))
+            {
+                Debug.Log("Pebble hit the floor");
+                gameObject.GetComponent<DragAndShoot>().enabled = false;
+                GameManager.setfree = false;
+                GameManager.nearest = null;
             }
         }
         else

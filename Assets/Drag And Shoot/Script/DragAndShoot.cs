@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 public class DragAndShoot : MonoBehaviour
 {
     [Header("Movement")]
-    public float maxPower;
+    public float maxPower = 300;
     float shootPower;
-    public float gravity = 1;
+    public float gravity = 5;
 
     [Range(0f, 0.1f)]
     public float slowMotion;
@@ -43,14 +43,22 @@ public class DragAndShoot : MonoBehaviour
 
     void Update()
     {
+        // RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        // if (hit.collider == null)
+        // {
+        //     return;
+        // }
+
         if (Input.GetMouseButtonDown(0))
         {
-            // if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
+            if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
             MouseClick();
         }
+        
         if (Input.GetMouseButton(0))
         {
-            // if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
+            if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
             MouseDrag();
 
             if (shootWhileMoving)
@@ -59,7 +67,8 @@ public class DragAndShoot : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            // if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
+            if (EventSystem.current.currentSelectedGameObject) return;  //ENABLE THIS IF YOU DONT WANT TO IGNORE UI
+            GameManager.setfree = true;
             MouseRelease();
         }
 
