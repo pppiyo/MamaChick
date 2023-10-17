@@ -6,7 +6,7 @@ using UnityEngine;
 public class hpControl : MonoBehaviour
 {
     private cubeHealth health;
-    private totalPoints p;
+    //private totalPoints p;
     private chickMP MP;
     private Vector3 originalScale;
     //public ObjectSpawner objectSpawner;
@@ -17,7 +17,7 @@ public class hpControl : MonoBehaviour
         originalScale = transform.localScale;
         health = GetComponent<cubeHealth>();
         MP = GetComponent<chickMP>();
-        p = GetComponent<totalPoints>();
+        //p = GetComponent<totalPoints>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class hpControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Worm")) 
+        if (collision.gameObject.CompareTag("Worm"))
         {
             if (originalScale.x < 10)
             {
@@ -57,7 +57,7 @@ public class hpControl : MonoBehaviour
             char[] numericPart_;
 
             string mp = Regex.Replace(objectName, "[^0-9]", "");
-            
+
             int numericValue;
             Debug.Log("yt68ff76r58r7");
             Debug.Log(mp);
@@ -75,21 +75,24 @@ public class hpControl : MonoBehaviour
             {
                 MP.AddPoint(numericValue);
                 // totoal point + 1
-                p.AddScore(1);
-                if (p.points == 3)
-                {
-                    // win this game
-                    GameManager.instance.WinGame();
-                }
-            } else if (MP.mp + numericValue < 21)
+                GlobalVariables.addScore = true;
+                //p.AddScore(1);
+                //if (p.points == 3)
+                //{
+                //    // win this game
+                //    GlobalVariables.win = true;
+                //}
+            }
+            else if (MP.mp + numericValue < 21)
             {
                 MP.AddPoint(numericValue);
-            } else
+            }
+            else
             {
                 // lose one chick
                 Destroy(gameObject);
                 // #chick = 0, game over
-                GameManager.instance.chickDestory();
+                GlobalVariables.chick--;
             }
             Destroy(collision.gameObject);
         }

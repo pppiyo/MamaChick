@@ -2012,8 +2012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1486608405}
-  gameTime: 300
-  chickCnt: 3
+  gameTime: 20
 --- !u!114 &1341282650
 MonoBehaviour:
   m_ObjectHideFlags: 0

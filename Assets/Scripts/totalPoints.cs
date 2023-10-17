@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class totalPoints : MonoBehaviour
 {
     public int points = 0;
     public Text scoreText;
+
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class totalPoints : MonoBehaviour
     public void AddScore(int point)
     {
         points += point;
+        GlobalVariables.scores = points;
         UpdateScoreDisplay();
     }
 
