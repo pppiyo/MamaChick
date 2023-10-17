@@ -15,6 +15,7 @@ public class DetectCollisions : MonoBehaviour
             if (other.gameObject.CompareTag("Apple")) 
             {
                 transform.localScale += new Vector3(add.x, add.y, add.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + add.y / 2, transform.position.z);
             }
 
             Destroy(other.gameObject);
@@ -22,13 +23,9 @@ public class DetectCollisions : MonoBehaviour
 
         else if (gameObject.CompareTag("Eagle"))
         {
-            if (other.gameObject.CompareTag("Apple"))
+            if (other.gameObject.CompareTag("Worm"))
             {
-                return;
-            }
-            else if (other.gameObject.CompareTag("Apple"))
-            {
-                return;
+                Destroy(other.gameObject);
             }
             else if (other.gameObject.CompareTag("Pebble"))
             {
@@ -42,7 +39,6 @@ public class DetectCollisions : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Floor"))
             {
-                Debug.Log("Worm hit the floor");
                 gameObject.GetComponent<DragAndShoot>().enabled = false;
                 GameManager.setfree = false;
                 GameManager.nearest = null;
@@ -52,12 +48,24 @@ public class DetectCollisions : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Floor"))
             {
-                Debug.Log("Pebble hit the floor");
                 gameObject.GetComponent<DragAndShoot>().enabled = false;
                 GameManager.setfree = false;
                 GameManager.nearest = null;
             }
         }
+        else if (gameObject.CompareTag("Apple"))
+            {
+                if (other.gameObject.CompareTag("Floor"))
+                {
+                    Destroy(gameObject);
+                }
+                else if (other.gameObject.CompareTag(""))
+                {
+                    
+                }
+            }
+
+
         else
         {
             Destroy(gameObject);

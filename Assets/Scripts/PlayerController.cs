@@ -9,12 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 40.0f;
     private Vector3 moveDirection;
     private float horizontalInput;
+    private float MAMA_RIGHT_BOUNDARY = -10.0f;
+    private float MAMA_SIZE_OFFSET = 12.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        // pebbles  = GameObject.FindGameObjectsWithTag("Pebble");
-        // worms  = GameObject.FindGameObjectsWithTag("Worm");
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.nearest != null && GameManager.setfree == false)
         {
             GameManager.nearest.GetComponent<DragAndShoot>().enabled = true;
-            GameManager.nearest.transform.position = new Vector3(transform.position.x, transform.position.y + 12, transform.position.z);
+            GameManager.nearest.transform.position = new Vector3(transform.position.x, transform.position.y + MAMA_SIZE_OFFSET, transform.position.z);
         }
     }
 
@@ -45,12 +45,19 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
+
         if (horizontalInput != 0)
         {
             moveDirection = new Vector3(horizontalInput, 0f, 0f);
             moveDirection = moveDirection.normalized;
         }
+
         transform.Translate(movement);
+
+        if (transform.position.x >= MAMA_RIGHT_BOUNDARY)
+        {
+            transform.position = new Vector3(MAMA_RIGHT_BOUNDARY, transform.position.y, transform.position.z);
+        }
 
     }
 
