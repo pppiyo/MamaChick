@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2060,12 +2060,28 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: timeStep
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: boxSize.x
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: boxSize.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: numPoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: pushForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
+      propertyPath: linePoints
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1729689544164586636, guid: 804082140a781416dbe69c0a62b2427b, type: 3}
       propertyPath: maxDistance
