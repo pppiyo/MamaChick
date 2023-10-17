@@ -5,6 +5,6 @@ public class StartMenu : MonoBehaviour
 {
     public void LoadStartMenuScene()
     {
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("Start Menu");
     }
 }
