@@ -207,10 +207,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985602335}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: set_runInEditMode
-        m_Mode: 6
+      - m_Target: {fileID: 1985602333}
+        m_TargetAssemblyTypeName: tutorialload, Assembly-CSharp
+        m_MethodName: LoadtutorialScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1456,8 +1456,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985602332}
-  - component: {fileID: 1985602335}
-  - component: {fileID: 1985602334}
   - component: {fileID: 1985602333}
   m_Layer: 0
   m_Name: GameObject_2
@@ -1490,44 +1488,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985602331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f91e47b588ad649a3bbfa21596159938, type: 3}
+  m_Script: {fileID: 11500000, guid: 637456fa7748e4517885c95c726ef950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1985602334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985602331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5811b4b48514348c29a654fccd76f1dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allPrefabs: []
-  cooldown: 60
-  pebbleCoolDown: 10
-  wormCoolDown: 20
-  eagleCoolDown: 5
-  startSetup: 0
---- !u!114 &1985602335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985602331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 315a7dfda9abd41898da5bdfc636cdbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayText: {fileID: 0}
-  nextButton: {fileID: 0}
-  buttonText: {fileID: 0}
-  textBatches: []
-  arrow: {fileID: 0}
-  objectsToReference: []
-  arrowYOffset: 2
-  mainCamera: {fileID: 0}
