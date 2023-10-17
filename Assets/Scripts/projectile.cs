@@ -112,7 +112,7 @@ public class Projectile : MonoBehaviour
         }
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize);
 
-        ctrlInput = Input.GetButtonDown("Fire1");
+        ctrlInput = Input.GetKeyDown(KeyCode.Space);
 
         if (pickedPebble)
         {
