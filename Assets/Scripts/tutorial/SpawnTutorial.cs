@@ -199,23 +199,23 @@ public class SpawnTutorial : MonoBehaviour
         }
 
         // Check number of eagles. If there are more than its max, don't spawn more.
-        eagles = GameObject.FindGameObjectsWithTag("Eagle");
-        if (eagles.Length <= EAGLE_MAX_COUNT && eagleCoolDown <= 0)
-        {
-            SpawnRandomEagle();
-            eagleCoolDown = 5.0f;
-            Debug.Log("Number of eagles: " + eagles.Length);
-        }
+        // eagles = GameObject.FindGameObjectsWithTag("Eagle");
+        // if (eagles.Length <= EAGLE_MAX_COUNT && eagleCoolDown <= 0)
+        // {
+        //     SpawnRandomEagle();
+        //     eagleCoolDown = 5.0f;
+        //     Debug.Log("Number of eagles: " + eagles.Length);
+        // }
         //else if (eagles.Length <= EAGLE_MAX_COUNT && GameManager.instance.get_spawn_eagle())
         //{
         //    SpawnRandomEagle();
         //    GameManager.instance.spawnDone();
         //    eagleCoolDown = 5.0f;
         //}
-        else
-        {
-            eagleCoolDown -= Time.deltaTime;
-        }
+        // else
+        // {
+        //     eagleCoolDown -= Time.deltaTime;
+        // }
 
         // Check number of worms. If there are more than its max, don't spawn more.
         worms = GameObject.FindGameObjectsWithTag("Worm");
@@ -255,13 +255,13 @@ public class SpawnTutorial : MonoBehaviour
         Instantiate(allPrefabs[WORM_INDEX], spawnPos, allPrefabs[WORM_INDEX].transform.rotation);
     }
 
-    public void SpawnRandomEagle()
-    {
-        float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
-        float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
-        Vector3 spawnPos = new Vector3(0, y, z);
-        Instantiate(allPrefabs[EAGLE_INDEX], spawnPos, allPrefabs[EAGLE_INDEX].transform.rotation);
-    }
+    // public void SpawnRandomEagle()
+    // {
+    //     float y = Random.Range(EAGLE_LIMIT_DOWN, EAGLE_LIMIT_UP);
+    //     float z = Random.Range(EAGLE_LIMIT_LEFT, EAGLE_LIMIT_RIGHT);
+    //     Vector3 spawnPos = new Vector3(0, y, z);
+    //     Instantiate(allPrefabs[EAGLE_INDEX], spawnPos, allPrefabs[EAGLE_INDEX].transform.rotation);
+    // }
 
     void SpawnRandomPebble()
     {
