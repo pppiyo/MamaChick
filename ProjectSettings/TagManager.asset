@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Apple
+  - Eagle
+  - Chick
+  - Mama
+  - Worm
+  - Pebble
+  - Static
   layers:
   - Default
   - TransparentFX

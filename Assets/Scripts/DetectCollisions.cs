@@ -10,11 +10,24 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Apple"))
+        if (gameObject.CompareTag("Chick") && other.gameObject.CompareTag("Apple"))
         {
             transform.localScale += new Vector3(add.x, add.y, add.z);
-            // gameObject.GetComponent<PlayerBehaviour>().AddScore();
+            Destroy(other.gameObject);
         }
-        Destroy(other.gameObject);
+
+        if (gameObject.CompareTag("Eagle"))
+        {
+            if (other.gameObject.CompareTag("Apple"))
+            {
+                return;
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+
     }
 }
