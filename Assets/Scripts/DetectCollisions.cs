@@ -52,20 +52,16 @@ public class DetectCollisions : MonoBehaviour
                 GameManager.setfree = false;
                 GameManager.nearest = null;
             }
-        }
-        else if (gameObject.CompareTag("Apple"))
+            if (other.gameObject.CompareTag("Apple"))
             {
-                if (other.gameObject.CompareTag("Floor"))
-                {
-                    Destroy(gameObject);
-                }
-                else if (other.gameObject.CompareTag(""))
-                {
-                    
-                }
+                Destroy(gameObject);
+                Rigidbody2D rb = other.gameObject.transform.Find("RedBall").gameObject.GetComponent<Rigidbody2D>();
+                rb.gravityScale = 5;
+                // Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+                // rb.isKinematic = false;
+                // rb.detectCollisions = true;
             }
-
-
+        }
         else
         {
             Destroy(gameObject);

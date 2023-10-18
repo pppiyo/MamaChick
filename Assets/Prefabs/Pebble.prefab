@@ -516,8 +516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPower: 300
-  gravity: 5
-  slowMotion: 0.1
+  gravity: 1
+  slowMotion: 0.02
   shootWhileMoving: 1
   forwardDraging: 0
   showLineOnScreen: 1
