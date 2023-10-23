@@ -83,7 +83,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedBall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6480989787251258092, guid: f6bc179e17a1e47bca92eb1158d08319, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6480989787251258092, guid: f6bc179e17a1e47bca92eb1158d08319, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6bc179e17a1e47bca92eb1158d08319, type: 3}
 --- !u!4 &5747104194416947506 stripped
 Transform:

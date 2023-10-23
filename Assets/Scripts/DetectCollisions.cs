@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    Vector3 add = new Vector3(5f, 5f, 5f);
+    Vector3 add = new Vector3(1f, 1f, 1f);
 
     // Vector3 add = new Vector3(0.5f, 0.5f, 0.5f);
 
